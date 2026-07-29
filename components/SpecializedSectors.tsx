@@ -213,10 +213,14 @@ export default function SpecializedSectors() {
                                     <ArrowUpRight
                                         className={`
                       mt-2
-                      h-5
-                      w-5
+                      h-4
+                      w-4
+                      shrink-0
                       transition-all
                       duration-300
+
+                      sm:h-5
+                      sm:w-5
 
                       ${activeSector === index
                                                 ? "text-[#E30613]"
@@ -290,15 +294,22 @@ export default function SpecializedSectors() {
                                         <div
                                             className="
                       flex
-                      h-[56px]
-                      w-[56px]
+                      h-11
+                      w-11
+                      shrink-0
                       items-center
                       justify-center
                       rounded-xl
                       bg-[#FF1F2D]
+
+                      sm:h-12
+                      sm:w-12
+
+                      lg:h-14
+                      lg:w-14
                     "
                                         >
-                                            <Building2 className="h-7 w-7 text-white" />
+                                            <Building2 className="h-5 w-5 text-white sm:h-6 sm:w-6 lg:h-7 lg:w-7" />
                                         </div>
 
                                         <div>
