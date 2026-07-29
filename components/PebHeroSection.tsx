@@ -327,7 +327,7 @@ lg:py-10
     break-words
   "
                   >
-                    PEB Building Manufacturer & Industrial Construction Company
+                    India&apos;s Trusted PEB Manufacturer & Turnkey Industrial Construction Company
                   </span>
                 </div>
 
@@ -340,29 +340,32 @@ lg:py-10
 
     text-white
 
-    text-[42px]
-    leading-[46px]
+    text-[38px]
+    leading-[42px]
 
-    sm:text-[58px]
-    sm:leading-[62px]
+    sm:text-[50px]
+    sm:leading-[54px]
 
-    md:text-[68px]
-    md:leading-[72px]
+    md:text-[58px]
+    md:leading-[62px]
 
-    lg:text-[82px]
-    lg:leading-[84px]
+    lg:text-[70px]
+    lg:leading-[74px]
 
-    xl:text-[96px]
-    xl:leading-[96px]
+    xl:text-[80px]
+    xl:leading-[82px]
 
-    2xl:text-[70px]
-    2xl:leading-[69px]
+    2xl:text-[58px]
+    2xl:leading-[58px]
 
     tracking-[-1.5px]
   "
                 >
-                  Build Smarter & Faster with End-to-End <br />
-                  <span className="text-[#E40015]">PEB Construction </span>
+                  Build Smarter & Faster with End-to-End
+                  <br />
+                  <span className="text-[#E40015]">
+                    PEB Manufacturing & Construction
+                  </span>
                 </h1>
 
                 {/* SUBHEADING */}
@@ -382,21 +385,22 @@ lg:py-10
                     lg:leading-[23px]
                   "
                 >
-                  Trusted Pre Engineered Building Contractor and Industrial EPC
-                  Contractor delivering premium Factory Construction, Warehouse
-                  Construction, Industrial Steel Building Construction, and
-                  turnkey PEB projects across Chennai, Coimbatore & South India.
+                  Mekark is a leading Pre Engineered Building (PEB)
+                  Manufacturer and Turnkey PEB Contractor delivering
+                  industrial steel buildings, factories, warehouses, and
+                  commercial structures. With 60,000+ MT annual manufacturing
+                  capacity, in-house design, fabrication, and erection, we
+                  provide end-to-end PEB solutions across South India.
                 </h2>
 
                 {/* FEATURES */}
                 <div className="mt-8 space-y-1 max-w-[760px]">
                   {[
-                    "Leading Pre Engineered Building Company for Industrial & Commercial Projects",
-                    "End-to-End Industrial EPC Contractor with Design, Manufacturing & Erection",
-                    "Trusted Factory Construction Company & Warehouse Building Contractor",
-                    "Advanced PEB Steel Structure Contractors with 40,000+ MT Annual Production",
-                    "Turnkey Industrial Warehouse Construction & Manufacturing Plant Solutions",
-                    "Serving Chennai, Coimbatore & South India with Fast-Track Project Delivery",
+                    "60,000+ MT Annual Manufacturing Capacity",
+                    "In-House Design, Manufacturing & Erection",
+                    "450+ Industrial Projects Delivered",
+                    "ISO Certified PEB Manufacturing Facility",
+                    "Factory, Warehouse & Industrial Building Specialists",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       {/* ARROW ICON */}

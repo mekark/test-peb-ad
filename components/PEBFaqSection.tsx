@@ -10,65 +10,65 @@ const faqData = [
     id: "01",
     question: "Why choose Mekark over other PEB Contractors?",
     answer:
-      "Unlike many PEB Contractors, Mekark is a fully integrated Pre Engineered Building Company with in-house engineering, steel manufacturing, fabrication, and erection. This ensures faster delivery, better quality control, and complete project accountability.",
+      "Unlike many PEB Contractors, Mekark is a fully integrated PEB Manufacturer with in-house design, manufacturing, and erection. This ensures better quality, faster delivery, and complete project accountability.",
   },
   {
     id: "02",
     question: "What makes Mekark a trusted Industrial EPC Contractor?",
     answer:
-      "As a leading Industrial EPC Contractor, Mekark manages engineering, procurement, manufacturing, construction, and commissioning under one roof. Our turnkey approach eliminates multiple vendors and ensures seamless project execution.",
+      "Mekark delivers complete Industrial EPC Solutions, including engineering, procurement, civil construction, PEB manufacturing, and project execution. Our turnkey approach ensures seamless coordination and timely project completion.",
   },
   {
     id: "03",
     question: "Does Mekark manufacture Pre Engineered Buildings in-house?",
     answer:
-      "Yes. As an experienced Pre Engineered Building Contractor, every steel structure is designed and manufactured in our 6 lakh sq.ft. facility with an annual capacity of over 40,000 MT, ensuring precision and consistent quality.",
+      "Yes. Mekark is a leading Pre Engineered Building Manufacturer with an advanced in-house manufacturing facility. Every steel component is precision-engineered and quality-checked before delivery.",
   },
   {
     id: "04",
     question:
       "Can Mekark handle large Factory Construction and Warehouse Construction projects?",
     answer:
-      "Absolutely. As a leading Factory Construction Company and Warehouse Construction Company, we execute industrial facilities of all sizes with dedicated engineering, manufacturing, and site execution teams.",
+      "Yes. As an experienced Factory Building Contractor and Warehouse Building Contractor, Mekark delivers turnkey projects for manufacturing, logistics, FMCG, pharmaceutical, and industrial sectors.",
   },
   {
     id: "05",
     question: "How does PEB Construction reduce project timelines?",
     answer:
-      "Compared to conventional RCC construction, PEB Construction uses factory-fabricated steel components that significantly reduce on-site work, enabling industrial projects to be completed up to 30–40% faster.",
+      "PEB Construction uses factory-manufactured steel components, reducing on-site work and construction delays. This enables faster project completion with consistent quality and lower overall costs.",
   },
   {
     id: "06",
     question:
       "What quality standards does Mekark follow for Industrial Steel Building Construction?",
     answer:
-      "Our Industrial Steel Building Construction projects follow ISO-certified quality systems, strict fabrication standards, and multi-stage inspections to ensure structural integrity and long-term performance.",
+      "As a trusted Steel Building Manufacturer, Mekark follows strict quality control from design to fabrication and erection. Every project is executed using high-quality materials and proven engineering practices.",
   },
   {
     id: "07",
     question: "Can Mekark customize Pre Engineered Building solutions?",
     answer:
-      "Yes. Every Pre Engineered Building is engineered based on your production process, crane capacity, clear span, mezzanine floors, ventilation, and future expansion requirements.",
+      "Yes. Every Pre Engineered Building is custom-designed to match your span, height, crane capacity, production process, and future expansion requirements for maximum operational efficiency.",
   },
   {
     id: "08",
     question: "Does Mekark provide complete Turnkey Industrial EPC solutions?",
     answer:
-      "Yes. As a trusted Industrial EPC Contractor, we provide complete turnkey solutions including design, engineering, procurement, manufacturing, steel fabrication, erection, roofing, cladding, and project handover.",
+      "Yes. Mekark offers complete Turnkey Industrial EPC Solutions, including design, manufacturing, civil works, MEP, steel erection, and final project handover through a single expert team.",
   },
   {
     id: "09",
     question:
       "Which industries does Mekark serve as an Industrial Building Contractor?",
     answer:
-      "As an experienced Industrial Building Contractor, we deliver projects for manufacturing, logistics, automotive, pharmaceuticals, food processing, engineering, FMCG, textiles, and commercial industries.",
+      "Mekark serves manufacturing, logistics, automotive, FMCG, food processing, pharmaceutical, engineering, textile, and commercial industries with customized industrial building solutions.",
   },
   {
     id: "10",
     question:
       "Why is Mekark a preferred Pre Engineered Building Company in Chennai?",
     answer:
-      "Mekark is recognized as a trusted Pre Engineered Building Company and PEB Contractor in Chennai, delivering factory construction, warehouse construction, and industrial EPC projects with in-house manufacturing, advanced engineering, and proven execution expertise.",
+      "Mekark is a trusted Pre Engineered Building Company in Chennai known for in-house manufacturing, turnkey execution, and 500+ successfully completed industrial projects with on-time delivery and superior quality.",
   },
 ];
 
