@@ -2,13 +2,21 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { ArrowUpRight, Building2 } from "lucide-react";
+import {
+    ArrowUpRight,
+    Warehouse,
+    Factory,
+    Cog,
+    Building,
+    Snowflake,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const sectors = [
     {
         id: "01",
         title: "Warehouse & Logistics",
+        icon: Warehouse,
         bg: "/Images/Spcl/ware.png",
         heading: "Smart Warehousing Infrastructure",
         desc: "Built for velocity, accuracy, and seamless movement — redefining modern storage.",
@@ -24,6 +32,7 @@ const sectors = [
     {
         id: "02",
         title: "Factories, Industries & Plants",
+        icon: Factory,
         bg: "/Images/Spcl/fact.png",
         heading: "High-Performance Industrial Facilities",
         desc: "Engineered environments for continuous production and operational excellence.",
@@ -39,6 +48,7 @@ const sectors = [
     {
         id: "03",
         title: "Manufacturing",
+        icon: Cog,
         bg: "/Images/Spcl/MAnu.png",
         heading: "Future-Ready Production Spaces",
         desc: "Where innovation meets efficiency in every square meter.",
@@ -54,6 +64,7 @@ const sectors = [
     {
         id: "04",
         title: "Multi Storey Steel Buildings",
+        icon: Building,
         bg: "/Images/Spcl/Multi.png",
         heading: "Vertical Steel Infrastructure",
         desc: "Optimized for urban expansion and structural excellence.",
@@ -69,6 +80,7 @@ const sectors = [
     {
         id: "05",
         title: "Clean Rooms & Cold Storage",
+        icon: Snowflake,
         bg: "/Images/Spcl/cold.png",
         heading: "Temperature-Controlled Engineering",
         desc: "Precision-built environments preserving quality, safety, and compliance.",
@@ -85,6 +97,7 @@ const sectors = [
 
 export default function SpecializedSectors() {
     const [activeSector, setActiveSector] = useState(0);
+    const ActiveIcon = sectors[activeSector].icon;
 
     return (
         <section id="industries"
@@ -155,7 +168,7 @@ export default function SpecializedSectors() {
               "
                         >
                             Specialized PEB Solutions{" "}
-                            <span className="text-[#E30613]">Across 7 Sectors</span>
+                            <span className="text-[#E30613]">Across 5 Sectors</span>
                         </h2>
 
                         {/* Sector List */}
@@ -309,7 +322,7 @@ export default function SpecializedSectors() {
                       lg:w-14
                     "
                                         >
-                                            <Building2 className="h-5 w-5 text-white sm:h-6 sm:w-6 lg:h-7 lg:w-7" />
+                                            <ActiveIcon className="h-5 w-5 text-white sm:h-6 sm:w-6 lg:h-7 lg:w-7" />
                                         </div>
 
                                         <div>
