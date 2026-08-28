@@ -7,22 +7,22 @@ const reasons = [
   {
     id: "01",
     title: "In-House PEB Manufacturing",
-    desc: "Every steel component is engineered and fabricated in our own facility by experienced Pre Engineered Building Contractors and PEB Steel Structure Contractors.",
+    desc: "Every steel component is engineered and fabricated in our advanced manufacturing facility by experienced Pre Engineered Building Manufacturers, PEB Contractors, and Steel Structure Contractors.",
   },
   {
     id: "02",
-    title: "Complete Industrial EPC Services",
-    desc: "One trusted Industrial EPC Contractor for engineering, procurement, steel fabrication, construction, and project handover.",
+    title: "Complete Turnkey PEB & Industrial EPC Services",
+    desc: "One trusted PEB Construction Company and Industrial EPC Contractor for engineering, procurement, manufacturing, steel fabrication, construction, and project handover.",
   },
   {
     id: "03",
     title: "Transparent Pricing. Guaranteed Timelines.",
-    desc: "Fixed-cost proposals and milestone-driven execution from an experienced Industrial Construction Company.",
+    desc: "Fixed-cost proposals and milestone-driven execution from a trusted Industrial Construction Company delivering quality PEB Construction with on-time completion.",
   },
   {
     id: "04",
     title: "450+ Industrial Projects Delivered",
-    desc: "Trusted Factory Construction Company and Warehouse Construction Company delivering industrial buildings across manufacturing, logistics, FMCG, and commercial sectors.",
+    desc: "Trusted Factory Building Contractor, Warehouse Building Contractor, and Industrial Steel Building Contractor delivering PEB solutions across manufacturing, logistics, FMCG, pharmaceutical, and commercial sectors.",
   },
 ];
 
@@ -103,16 +103,17 @@ export default function WhyMekark() {
                   text-white/95
                 "
               >
-                Unlike many PEB contractors, Mekark owns the complete
-                process—from engineering and steel manufacturing to site
+                Unlike many PEB Contractors, Mekark owns the complete
+                process—from engineering and PEB manufacturing to site
                 erection and project delivery. As a trusted Pre Engineered
-                Building Company and Industrial EPC Contractor, we eliminate
-                third-party dependencies to deliver predictable quality, faster
-                execution, and complete accountability. Whether you're planning
-                a Factory Construction, Warehouse Construction, or Industrial
-                Steel Building Construction project, our integrated design-build
-                approach ensures a single point of responsibility from concept
-                to commissioning.
+                Building Manufacturer, PEB Construction Company, and
+                Industrial PEB Contractor, we eliminate third-party
+                dependencies to deliver consistent quality, faster execution,
+                and complete accountability. Whether you're planning a
+                Factory Construction, Warehouse Construction, or Industrial
+                Steel Building project, our integrated design-build approach
+                ensures a single point of responsibility from concept to
+                commissioning.
               </p>
 
               <p
@@ -124,10 +125,11 @@ export default function WhyMekark() {
                   text-white/95
                 "
               >
-                With 450+ completed industrial projects, Mekark is the preferred
-                Industrial Building Contractor for manufacturers, logistics
-                companies, food processing units, and commercial developers
-                across South India.
+                With 500+ completed industrial projects, Mekark is the
+                preferred Steel Building Manufacturer, Industrial Building
+                Contractor, and Warehouse Building Contractor for
+                manufacturers, logistics companies, food processing
+                industries, and commercial developers across South India.
               </p>
             </div>
 
@@ -171,7 +173,7 @@ export default function WhyMekark() {
     hover:bg-[#FFF4F4]
   "
             >
-              Start an export enquiry
+              Start an Export Enquiry
               <ArrowUpRight
                 className="
       h-5
