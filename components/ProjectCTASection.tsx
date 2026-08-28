@@ -121,6 +121,8 @@ export default function ProjectCTASection() {
         startTimeline: formData.projectTimeline.trim(),
         budget: formData.projectBudget.trim(),
         message: formData.details.trim(),
+        sourceUrl: window.location.href,
+        pageUrl: window.location.href,
       };
 
       console.log("REQUEST PAYLOAD:", requestPayload);

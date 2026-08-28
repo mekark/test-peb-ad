@@ -181,6 +181,8 @@ export default function PebHeroSection() {
           startTimeline: formData.projectTimeline.trim(),
           budget: formData.projectBudget.trim(),
           message: formData.message.trim(),
+          sourceUrl: window.location.href,
+          pageUrl: window.location.href,
         }),
       });
 

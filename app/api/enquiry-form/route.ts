@@ -1,29 +1,12 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 const UPSTREAM_ENDPOINT = "https://mekark-mail.onrender.com/api/enquiry-form";
 
-function resolveUpstreamOrigin(request: NextRequest) {
-  const directOrigin = request.headers.get("origin");
-
-  if (directOrigin) {
-    return directOrigin;
-  }
-
-  const forwardedHost =
-    request.headers.get("x-forwarded-host") || request.headers.get("host");
-
-  const forwardedProto = request.headers.get("x-forwarded-proto") || "https";
-
-  if (forwardedHost) {
-    return `${forwardedProto}://${forwardedHost}`;
-  }
-
-  return new URL(request.url).origin;
-}
-
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
   try {
     const body = await request.json();
+    const origin = request.headers.get("origin");
+    const referer = request.headers.get("referer");
 
     if (!body.name || !body.phone) {
       return NextResponse.json(
@@ -36,18 +19,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const upstreamOrigin = resolveUpstreamOrigin(request);
+    const payload = {
+      ...body,
+      sourceDomain:
+        body.sourceDomain ||
+        (origin ? new URL(origin).hostname : undefined) ||
+        (referer ? new URL(referer).hostname : undefined),
+      sourceUrl:
+        body.sourceUrl ||
+        body.pageUrl ||
+        referer ||
+        origin ||
+        undefined,
+    };
 
-    // FIRE & FORGET
     const response = await fetch(UPSTREAM_ENDPOINT, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
-        Origin: upstreamOrigin,
+        ...(origin ? { Origin: origin } : {}),
+        ...(referer ? { Referer: referer } : {}),
       },
-      body: JSON.stringify(body),
-      cache: "no-store",
+      body: JSON.stringify(payload),
     });
 
     const responseText = await response.text();
