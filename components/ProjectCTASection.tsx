@@ -220,11 +220,12 @@ export default function ProjectCTASection() {
               viewport={{ once: true }}
               className="
                 text-white
-                text-[42px]
-                sm:text-[54px]
-                lg:text-[64px]
-                leading-[1]
-                tracking-[-2px]
+                text-[28px]
+                sm:text-[42px]
+                lg:text-[56px]
+                leading-[1.1]
+                tracking-[-1px]
+                sm:tracking-[-2px]
                 font-bold
                 max-w-[720px]
               "

@@ -158,8 +158,6 @@ export default function PebHeroSection() {
 
     e.preventDefault();
 
-
-
     if (!validateForm()) return;
 
     setIsSubmitting(true);
@@ -281,15 +279,18 @@ lg:py-10
                   className="
     inline-flex
     items-center
-    gap-2
+    gap-1.5
+    sm:gap-2
 
     rounded-full
     border border-white/20
     bg-black/40
     backdrop-blur-md
 
-    px-3 sm:px-5
-    py-2 sm:py-3
+    px-2.5
+    sm:px-5
+    py-1.5
+    sm:py-3
 
     mb-5 sm:mb-6
 
@@ -300,8 +301,10 @@ lg:py-10
                   {/* DOT */}
                   <div
                     className="
-      w-2
-      h-2
+      w-1.5
+      h-1.5
+      sm:w-2
+      sm:h-2
 
       rounded-full
 
@@ -315,8 +318,9 @@ lg:py-10
                   <span
                     className="
     text-white
-    text-[11px]
-    leading-[16px]
+    text-[9px]
+    leading-none
+    whitespace-nowrap
 
     sm:text-sm
     sm:leading-normal
@@ -325,11 +329,9 @@ lg:py-10
 
     font-medium
     font-manrope
-
-    break-words
   "
                   >
-                    India&apos;s Trusted PEB Manufacturer & Turnkey Industrial Construction Company
+                    PEB Manufacturer & Turnkey Industrial Construction Company
                   </span>
                 </div>
 
@@ -342,30 +344,32 @@ lg:py-10
 
     text-white
 
-    text-[38px]
-    leading-[42px]
+    text-[28px]
+    leading-[34px]
 
-    sm:text-[50px]
-    sm:leading-[54px]
+    sm:text-[40px]
+    sm:leading-[44px]
 
-    md:text-[58px]
-    md:leading-[62px]
+    md:text-[52px]
+    md:leading-[56px]
 
-    lg:text-[70px]
-    lg:leading-[74px]
+    lg:text-[48px]
+    lg:leading-[52px]
 
-    xl:text-[80px]
-    xl:leading-[82px]
+    xl:text-[50px]
+    xl:leading-[54px]
 
     2xl:text-[58px]
-    2xl:leading-[58px]
+    2xl:leading-[62px]
 
-    tracking-[-1.5px]
+    tracking-[-1px]
+    sm:tracking-[-1.5px]
   "
                 >
                   Build Smarter & Faster with End-to-End
-                  <br />
+                  <br className="hidden sm:block" />
                   <span className="text-[#E40015]">
+                    {" "}
                     PEB Manufacturing & Construction
                   </span>
                 </h1>
@@ -387,22 +391,20 @@ lg:py-10
                     lg:leading-[23px]
                   "
                 >
-                  Mekark is a leading Pre Engineered Building (PEB)
-                  Manufacturer and Turnkey PEB Contractor delivering
-                  industrial steel buildings, factories, warehouses, and
-                  commercial structures. With 60,000+ MT annual manufacturing
-                  capacity, in-house design, fabrication, and erection, we
-                  provide end-to-end PEB solutions across South India.
+                  End-to-end PEB solutions for factories, warehouses and
+                  industrial buildings. As a leading PEB manufacturer and PEB
+                  contractor, we provide in-house design, manufacturing,
+                  erection and turnkey industrial construction for industrial
+                  projects
                 </h2>
 
                 {/* FEATURES */}
                 <div className="mt-8 space-y-1 max-w-[760px]">
                   {[
                     "60,000+ MT Annual Manufacturing Capacity",
-                    "In-House Design, Manufacturing & Erection",
                     "450+ Industrial Projects Delivered",
+                    "In-House Design, Manufacturing & Erection",
                     "ISO Certified PEB Manufacturing Facility",
-                    "Factory, Warehouse & Industrial Building Specialists",
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
                       {/* ARROW ICON */}
@@ -727,20 +729,27 @@ lg:flex    items-center
                       font-bold
                       text-black
 
-                      text-[32px]
-                      leading-[40px]
+                      text-[22px]
+                      leading-[28px]
+
+                      sm:text-[28px]
+                      sm:leading-[34px]
 
                       lg:text-[30px]
-                      lg:leading-[54px]
+                      lg:leading-[36px]
 
-                      tracking-[-1px]
+                      tracking-[-0.5px]
+                      sm:tracking-[-1px]
                     "
                   >
                     Request Your Project Blueprint
                   </h3>
 
-                  <p className="text-center text-gray-500 mt-3 text-[15px] lg:text-[13px]">
-                    Get a custom layout, cost range & 120-day timeline
+                  <p className="text-center text-gray-500 mt-2 sm:mt-3 text-[12px] sm:text-[15px] lg:text-[13px] whitespace-nowrap">
+                    Get a custom layout, cost range & 120-day* timeline
+                  </p>
+                  <p className="text-center text-gray-400 mt-1 text-[10px] sm:text-[11px]">
+                    *T&amp;C apply
                   </p>
 
                   {/* FORM */}

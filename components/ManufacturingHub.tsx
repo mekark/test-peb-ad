@@ -10,22 +10,23 @@ import "swiper/css";
 
 const WHATSAPP_NUMBER = "919790924754";
 const WHATSAPP_MESSAGE =
-    "Hello Mekark, I would like to discuss my PEB industrial construction project.";
+  "Hello Mekark, I would like to discuss my PEB industrial construction project.";
 
 const factoryImages = [
-    "/Images/new/i1.png",
-    "/Images/new/i2.png",
-    "/Images/new/i3.png",
-    "/Images/new/i4.png",
-    "/Images/new/i5.png",
-    "/Images/new/i6.png",];
+  "/Images/new/i1.png",
+  "/Images/new/i2.png",
+  "/Images/new/i3.png",
+  "/Images/new/i4.png",
+  "/Images/new/i5.png",
+  "/Images/new/i6.png",
+];
 
 export default function ManufacturingHub() {
-    return (
-        <section className="bg-[#F5F5F5] py-16 sm:py-20 lg:py-28 overflow-hidden">
-            <div className="mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
-                <div
-                    className="
+  return (
+    <section className="bg-[#F5F5F5] py-16 sm:py-20 lg:py-28 overflow-hidden">
+      <div className="mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+        <div
+          className="
             grid
             grid-cols-1
             gap-14
@@ -33,39 +34,39 @@ export default function ManufacturingHub() {
             lg:grid-cols-[560px_1fr]
             lg:items-center
           "
-                >
-                    {/* LEFT SIDE */}
-                    <motion.div
-                        initial={{ opacity: 0, x: -80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="relative"
-                    >
-                        <div
-                            className="
+        >
+          {/* LEFT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <div
+              className="
       relative
       overflow-hidden
       rounded-[8px]
     "
-                        >
-                            {/* CAROUSEL */}
-                            <Swiper
-                                modules={[Autoplay]}
-                                autoplay={{
-                                    delay: 5000, // HOLD IMAGE BEFORE NEXT
-                                    disableOnInteraction: false,
-                                }}
-                                speed={2200} // SLOW TRANSITION
-                                loop
-                                allowTouchMove={true}
-                                className="h-full w-full"
-                            >
-                                {factoryImages.map((img, index) => (
-                                    <SwiperSlide key={index}>
-                                        {/* FIXED HEIGHT */}
-                                        <div
-                                            className="
+            >
+              {/* CAROUSEL */}
+              <Swiper
+                modules={[Autoplay]}
+                autoplay={{
+                  delay: 5000, // HOLD IMAGE BEFORE NEXT
+                  disableOnInteraction: false,
+                }}
+                speed={2200} // SLOW TRANSITION
+                loop
+                allowTouchMove={true}
+                className="h-full w-full"
+              >
+                {factoryImages.map((img, index) => (
+                  <SwiperSlide key={index}>
+                    {/* FIXED HEIGHT */}
+                    <div
+                      className="
               relative
 
               h-[520px]
@@ -74,34 +75,32 @@ export default function ManufacturingHub() {
 
               lg:h-[820px]
             "
-                                        >
-                                            <Image
-                                                src={img}
-                                                alt={`Factory ${index + 1}`}
-                                                fill
-
-                                                /* IMAGE FILLS FULL CARD */
-                                                className="
+                    >
+                      <Image
+                        src={img}
+                        alt={`Factory ${index + 1}`}
+                        fill
+                        /* IMAGE FILLS FULL CARD */
+                        className="
                 object-cover
               "
+                        priority
+                      />
 
-                                                priority
-                                            />
+                      {/* OVERLAY */}
+                      <div className="absolute inset-0 bg-black/10" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
 
-                                            {/* OVERLAY */}
-                                            <div className="absolute inset-0 bg-black/10" />
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-
-                            {/* FLOATING BOX */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.3, duration: 0.7 }}
-                                viewport={{ once: true }}
-                                className="
+              {/* FLOATING BOX */}
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.7 }}
+                viewport={{ once: true }}
+                className="
         absolute
         bottom-5
         left-5
@@ -118,21 +117,21 @@ export default function ManufacturingHub() {
         sm:right-auto
         sm:w-[497px]
       "
-                            >
-                                <p
-                                    className="
+              >
+                <p
+                  className="
           font-space-grotesk
           text-[11px]
           uppercase
           tracking-[1.1px]
           text-[#E50818]
         "
-                                >
-                                    Inside the Factory
-                                </p>
+                >
+                  Inside the Factory
+                </p>
 
-                                <h4
-                                    className="
+                <h4
+                  className="
           mt-1
           font-manrope
           text-[15px]
@@ -140,62 +139,60 @@ export default function ManufacturingHub() {
           leading-[22px]
           text-black
         "
-                                >
-                                    6,00,000 Sq. Ft. Integrated Hub
-                                </h4>
-                            </motion.div>
-                        </div>
-                    </motion.div>
+                >
+                  6,00,000 Sq. Ft. Integrated Hub
+                </h4>
+              </motion.div>
+            </div>
+          </motion.div>
 
-                    {/* RIGHT SIDE */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 80 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                    >
-                        {/* TOP LABEL */}
-                        <p
-                            className="
+          {/* RIGHT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: 80 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            {/* TOP LABEL */}
+            <p
+              className="
                 font-space-grotesk
                 text-[11px]
                 uppercase
                 tracking-[1.4px]
                 text-[#E50818]
               "
-                        >
-                            Manufacturing Excellence
-                        </p>
+            >
+              Manufacturing Excellence
+            </p>
 
-                        {/* HEADING */}
-                        <h2
-                            className="
+            {/* HEADING */}
+            <h2
+              className="
                 mt-4
                 max-w-[760px]
                 font-manrope
-                text-[36px]
+                text-[28px]
                 font-bold
-                leading-[42px]
+                leading-[34px]
                 tracking-[-1px]
                 text-black
 
-                sm:text-[44px]
-                sm:leading-[50px]
+                sm:text-[38px]
+                sm:leading-[44px]
 
-                lg:text-[55px]
-                lg:leading-[56.11px]
+                lg:text-[52px]
+                lg:leading-[56px]
                 lg:tracking-[-1.02px]
               "
-                        >
-                            Tamil Nadu’s High-Capacity{" "}
-                            <span className="text-[#E50818]">
-                                PEB Manufacturing Hub
-                            </span>
-                        </h2>
+            >
+              Tamil Nadu’s High-Capacity{" "}
+              <span className="text-[#E50818]">PEB Manufacturing Hub</span>
+            </h2>
 
-                        {/* SUB HEADING */}
-                        <h3
-                            className="
+            {/* SUB HEADING */}
+            <h3
+              className="
                 mt-8
                 font-manrope
                 text-[20px]
@@ -204,60 +201,77 @@ export default function ManufacturingHub() {
                 tracking-[-0.41px]
                 text-[#040303]
               "
-                        >
-                            Inside Mekark's Manufacturing Excellence
-                        </h3>
+            >
+              Inside Mekark's Manufacturing Excellence
+            </h3>
 
-                        {/* PARAGRAPHS */}
-                        <div className="mt-5 space-y-5">
-                            <p
-                                className="
+            {/* PARAGRAPHS */}
+            <div className="mt-5 space-y-5">
+              <p
+                className="
                   text-[16px]
                   leading-[28px]
                   text-[#322C2E]
                 "
-                            >
-                                India’s industrial leaders trust Mekark because we are not just a PEB building manufacturer — we are a complete design & build turnkey EPC solutions provider delivering large-scale industrial infrastructure with precision, speed, and engineering excellence.
-                            </p>
+              >
+                India’s industrial leaders trust Mekark as a Pre Engineered
+                Building (PEB) manufacturer, PEB building manufacturer and
+                industrial EPC contractor, delivering large-scale industrial
+                infrastructure with precision, speed and engineering excellence.
+              </p>
 
-                            <p
-                                className="
+              <p
+                className="
                   text-[16px]
                   leading-[28px]
                   text-[#322C2E]
                 "
-                            >
-                                Operating from a 6,00,000 sq. ft. fully integrated facility, Mekark stands among Tamil Nadu’s leading pre engineered building manufacturers and trusted PEB manufacturers in Chennai, delivering up to 3000 tons of steel structures with consistency, quality, and engineering accuracy.
-                            </p>
+              >
+                Operating from a 6,00,000 sq. ft. integrated manufacturing
+                facility, Mekark is among Tamil Nadu’s leading pre engineered
+                building manufacturers and PEB manufacturers in Chennai,
+                delivering high-quality steel structures with consistency,
+                quality and engineering accuracy.
+              </p>
 
-                            <p
-                                className="
+              <p
+                className="
                   text-[16px]
                   leading-[28px]
                   text-[#322C2E]
                 "
-                            >
-                                Our fully automated manufacturing facility supports advanced PEB warehouse construction, industrial warehouse construction, and customized steel fabrication for complex industrial projects. Every component is manufactured to exact specifications—reducing delays, improving execution quality, and accelerating project timelines.
-                            </p>
+              >
+                Our advanced manufacturing facility supports PEB warehouse
+                construction, industrial warehouse construction, industrial
+                steel building construction and customized steel fabrication for
+                complex industrial projects. Every component is manufactured to
+                exact specifications—reducing delays, improving execution
+                quality and accelerating project timelines.
+              </p>
 
-                            <p
-                                className="
+              <p
+                className="
                   text-[16px]
                   leading-[28px]
                   text-[#322C2E]
                 "
-                            >
-                                Backed by ISO-certified processes and a 300+ strong engineering team, Mekark delivers integrated design & build turnkey EPC solutions for businesses seeking reliable industrial building contractors, factory construction company expertise, and end-to-end project execution under one roof.
-                            </p>
-                        </div>
+              >
+                Backed by ISO-certified processes and a 400+ strong engineering
+                team, Mekark delivers integrated design-and-build and turnkey
+                industrial construction solutions for businesses seeking
+                reliable industrial building contractors, factory construction
+                company expertise and end-to-end project execution under one
+                roof.
+              </p>
+            </div>
 
-                        {/* RED CTA BOX */}
-                        <motion.div
-                            whileHover={{
-                                y: -4,
-                            }}
-                            transition={{ duration: 0.3 }}
-                            className="
+            {/* RED CTA BOX */}
+            <motion.div
+              whileHover={{
+                y: -4,
+              }}
+              transition={{ duration: 0.3 }}
+              className="
     mt-8
     max-w-[560px]
     rounded-[8px]
@@ -269,9 +283,9 @@ export default function ManufacturingHub() {
     sm:px-6
     sm:py-6
   "
-                        >
-                            <h4
-                                className="
+            >
+              <h4
+                className="
       font-manrope
       text-[22px]
       font-bold
@@ -280,12 +294,12 @@ export default function ManufacturingHub() {
 
       sm:text-[24px]
     "
-                            >
-                                Build Faster. Scale Smarter. Perform Better.
-                            </h4>
+              >
+                Build Faster. Scale Smarter. Perform Better.
+              </h4>
 
-                            <p
-                                className="
+              <p
+                className="
       mt-3
       max-w-[430px]
       text-[14px]
@@ -294,23 +308,23 @@ export default function ManufacturingHub() {
 
       sm:text-[15px]
     "
-                            >
-                                Partner with a top pre engineering building company delivering
-                                turnkey excellence across India.
-                            </p>
+              >
+                Partner with a top pre engineering building company delivering
+                turnkey excellence across India.
+              </p>
 
-                            {/* BUTTON */}
-                            <motion.a
-                                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                whileHover={{
-                                    x: 4,
-                                }}
-                                whileTap={{
-                                    scale: 0.97,
-                                }}
-                                className="
+              {/* BUTTON */}
+              <motion.a
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{
+                  x: 4,
+                }}
+                whileTap={{
+                  scale: 0.97,
+                }}
+                className="
       mt-5
       inline-flex
       items-center
@@ -327,14 +341,14 @@ export default function ManufacturingHub() {
       transition-all
       duration-300
     "
-                            >
-                                Contact Us
-                                <ArrowRight className="h-4 w-4" />
-                            </motion.a>
-                        </motion.div>
-                    </motion.div>
-                </div>
-            </div>
-        </section>
-    );
+              >
+                Contact Us
+                <ArrowRight className="h-4 w-4" />
+              </motion.a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
 }

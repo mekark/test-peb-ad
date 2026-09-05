@@ -78,13 +78,13 @@ export default function ProjectsGallery() {
               className="
                 mt-3
                 font-manrope
-                text-[38px]
+                text-[28px]
                 font-bold
-                leading-[44px]
+                leading-[34px]
                 text-black
 
-                sm:text-[44px]
-                sm:leading-[50px]
+                sm:text-[38px]
+                sm:leading-[44px]
 
                 lg:text-[50px]
                 lg:leading-[55px]

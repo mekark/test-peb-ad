@@ -59,17 +59,17 @@ export default function WorldClassEngineering() {
               className="
                 mt-4
                 font-manrope
-                text-[42px]
+                text-[28px]
                 font-light
-                leading-[46px]
+                leading-[34px]
                 tracking-[-1px]
                 text-white
 
-                sm:text-[56px]
-                sm:leading-[58px]
+                sm:text-[42px]
+                sm:leading-[48px]
 
-                lg:text-[72px]
-                lg:leading-[78px]
+                lg:text-[60px]
+                lg:leading-[66px]
                 lg:tracking-[-1.0px]
               "
             >

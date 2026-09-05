@@ -153,17 +153,17 @@ export default function SpecializedSectors() {
                             className="
                 max-w-[475px]
                 font-manrope
-                text-[42px]
+                text-[28px]
                 font-bold
-                leading-[48px]
+                leading-[34px]
                 tracking-[-1px]
                 text-white
 
-                sm:text-[52px]
-                sm:leading-[56px]
+                sm:text-[40px]
+                sm:leading-[46px]
 
-                lg:text-[60px]
-                lg:leading-[63px]
+                lg:text-[52px]
+                lg:leading-[56px]
                 lg:tracking-[-1.2px]
               "
                         >

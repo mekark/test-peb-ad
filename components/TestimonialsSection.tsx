@@ -196,12 +196,13 @@ export default function TestimonialsSection() {
                         <motion.h2
                             variants={headerItemVariants}
                             className="
-                                text-[42px]
+                                text-[28px]
                                 font-bold
-                                leading-[1]
-                                tracking-[-2px]
+                                leading-[1.1]
+                                tracking-[-1px]
                                 text-[#121212]
-                                sm:text-[56px]
+                                sm:text-[42px]
+                                sm:tracking-[-2px]
                                 lg:text-[52px]
                             "
                         >

@@ -70,6 +70,20 @@ export default function Navbar() {
 
         const updateNavbarTheme = () => {
             const header = headerRef.current;
+            const home = document.getElementById("home");
+
+            // Keep navbar transparent over the hero (white form was falsely detected as light)
+            if (home) {
+                const homeBottom = home.getBoundingClientRect().bottom;
+                const headerBottom =
+                    header?.getBoundingClientRect().bottom ?? 90;
+
+                if (homeBottom > headerBottom + 40) {
+                    setIsOnLightSection(false);
+                    return;
+                }
+            }
+
             const sampleY = Math.min(
                 window.innerHeight - 1,
                 (header?.getBoundingClientRect().bottom ??
@@ -188,22 +202,42 @@ lg:pt-5        "
                     transition={{
                         duration: 0.7,
                     }}
-                    className="
+                    className={`
             relative
 
             w-full
 
             h-[78px]
 
-            bg-transparent
-
-            px-2
-            sm:px-4
-            lg:px-2
-
             flex
             items-center
-          "
+
+            rounded-[22px]
+
+            px-3
+            sm:px-5
+            lg:px-6
+
+            transition-all
+            duration-300
+
+            ${isOnLightSection
+                            ? `
+                border
+                border-black/[0.08]
+                backdrop-blur-xl
+                bg-[linear-gradient(135deg,rgba(255,255,255,0.96)_0%,rgba(255,248,248,0.92)_45%,rgba(255,235,237,0.88)_100%)]
+                shadow-[0_10px_40px_rgba(50,44,46,0.08)]
+              `
+                            : `
+                border
+                border-transparent
+                bg-transparent
+                backdrop-blur-none
+                shadow-none
+              `
+                        }
+          `}
                 >
                     {/* LOGO */}
                     <div className="shrink-0 z-10">

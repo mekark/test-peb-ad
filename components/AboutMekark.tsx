@@ -70,22 +70,24 @@ export default function AboutMekark() {
             className="
               max-w-[1100px]
               font-manrope
-              text-[34px]
-              leading-[42px]
-              tracking-[-1.2px]
+              text-[26px]
+              leading-[32px]
+              tracking-[-1px]
               font-bold
               text-black
 
-              sm:text-[42px]
-              sm:leading-[52px]
+              sm:text-[36px]
+              sm:leading-[42px]
+              sm:tracking-[-1.2px]
 
               lg:text-[50px]
               lg:leading-[61.2px]
               lg:tracking-[-1.8px]
+              lg:whitespace-nowrap
             "
           >
-            Trusted Industrial {" "}
-            <span className="text-[#CC000A]">EPC Contractor & PEB Manufacturer</span> 
+            Trusted Industrial{" "}
+            <span className="text-[#CC000A]">EPC Contractor & PEB Manufacturer</span>
           </h2>
         </motion.div>
 
@@ -167,12 +169,25 @@ export default function AboutMekark() {
                 sm:leading-[29.25px]
               "
             >
-              Founded in 2008, Mekark is a leading Pre Engineered Building
-              Contractor and Industrial EPC Contractor delivering turnkey
-              factory, warehouse and industrial steel building projects. With
-              40,000 MT annual production capacity, a 6 lakh sq.ft. integrated
-              manufacturing campus, and an experienced engineering team, we
-              execute projects with speed, precision and complete accountability.
+              Founded in 2008, Mekark is a leading Pre Engineered Building (PEB)
+              manufacturer, PEB contractor and industrial EPC contractor
+              delivering turnkey industrial construction solutions across South
+              India.
+              
+              <br />
+              <br />
+              We specialise in the design, engineering, manufacturing and
+              erection of PEB steel structures for factories, warehouses and
+              industrial buildings. From in-house engineering and steel
+              fabrication to site erection and project execution, we provide
+              complete end-to-end solutions under one roof. 
+              
+              <br />
+              <br />
+              With an integrated
+              manufacturing facility, experienced engineering team and proven
+              industrial project expertise, we deliver projects with quality,
+              precision, predictable timelines and single-point accountability.
             </motion.p>
 
             {/* Paragraph 2 */}

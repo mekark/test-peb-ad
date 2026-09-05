@@ -83,14 +83,14 @@ export default function ManufacturingProcess() {
             className="
               mt-5
               font-manrope
-              text-[38px]
+              text-[28px]
               font-bold
-              leading-[44px]
-              tracking-[-1.2px]
+              leading-[34px]
+              tracking-[-1px]
               text-[#0F172A]
 
-              sm:text-[46px]
-              sm:leading-[52px]
+              sm:text-[38px]
+              sm:leading-[44px]
 
               lg:text-[50px]
               lg:leading-[55px]

@@ -12,6 +12,7 @@ import PEBFaqSection from "@/components/PEBFaqSection";
 import ProjectCTASection from "@/components/ProjectCTASection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import Navbar from "@/components/Navbar";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export default function HomePage() {
   return (
@@ -30,6 +31,7 @@ export default function HomePage() {
       <TestimonialsSection />
       <PEBFaqSection />
       <ProjectCTASection />
+      <ScrollToTop />
     </main>
   );
 }
