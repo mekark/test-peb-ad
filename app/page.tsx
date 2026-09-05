@@ -14,6 +14,8 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Navbar from "@/components/Navbar";
 import ScrollToTop from "@/components/ScrollToTop";
 
+
+
 export default function HomePage() {
   return (
     <main>
