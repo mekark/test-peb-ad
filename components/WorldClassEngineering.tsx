@@ -191,7 +191,7 @@ export default function WorldClassEngineering() {
           text-[#E50818]
         "
                   >
-                    450+
+                    200+
                   </h3>
 
                   <p

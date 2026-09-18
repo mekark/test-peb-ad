@@ -21,7 +21,7 @@ const reasons = [
   },
   {
     id: "04",
-    title: "450+ Industrial Projects Delivered",
+    title: "200+ Industrial Projects Delivered",
     desc: "Trusted factory building contractor, warehouse construction contractor and industrial steel building contractor delivering PEB solutions across manufacturing, logistics, FMCG, pharmaceutical and commercial sectors.",
   },
 ];
@@ -124,7 +124,7 @@ export default function WhyMekark() {
                   text-white/95
                 "
               >
-                With 450+ completed industrial projects, Mekark is a trusted PEB
+                With 200+ completed industrial projects, Mekark is a trusted PEB
                 manufacturer, industrial building contractor and warehouse
                 construction company for manufacturers, logistics companies,
                 food processing industries, pharmaceutical companies and
