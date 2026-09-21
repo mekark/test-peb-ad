@@ -402,7 +402,7 @@ lg:py-10
                 <div className="mt-8 space-y-1 max-w-[760px]">
                   {[
                     "40,000+ MT Annual Manufacturing Capacity",
-                    "450+ Industrial Projects Delivered",
+                    "200+ Industrial Projects Delivered",
                     "In-House Design, Manufacturing & Erection",
                     "ISO Certified PEB Manufacturing Facility",
                   ].map((item, index) => (
