@@ -401,7 +401,7 @@ lg:py-10
                 {/* FEATURES */}
                 <div className="mt-8 space-y-1 max-w-[760px]">
                   {[
-                    "60,000+ MT Annual Manufacturing Capacity",
+                    "40,000+ MT Annual Manufacturing Capacity",
                     "450+ Industrial Projects Delivered",
                     "In-House Design, Manufacturing & Erection",
                     "ISO Certified PEB Manufacturing Facility",
