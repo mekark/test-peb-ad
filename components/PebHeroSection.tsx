@@ -559,7 +559,7 @@ lg:grid
                 >
                   {[
                     {
-                      number: "450+",
+                      number: "200+",
                       label: "Projects",
                     },
                     {
@@ -571,8 +571,8 @@ lg:grid
                       label: "Annual Production",
                     },
                     {
-                      number: "400+",
-                      label: "Engineering Team",
+                      number: "175+",
+                      label: "In-house engineers",
                     },
                   ].map((item, index) => (
                     <div key={index}>
@@ -746,7 +746,7 @@ lg:flex    items-center
                   </h3>
 
                   <p className="text-center text-gray-500 mt-2 sm:mt-3 text-[12px] sm:text-[15px] lg:text-[13px] whitespace-nowrap">
-                    Get a custom layout, cost range & 120-day* timeline
+                    Get a custom layout, cost range & 150-day* timeline
                   </p>
                   <p className="text-center text-gray-400 mt-1 text-[10px] sm:text-[11px]">
                     *T&amp;C apply
@@ -1257,7 +1257,7 @@ lg:flex    items-center
                 >
                   {[
                     {
-                      number: "450+",
+                      number: "200+",
                       label: "Projects",
                     },
                     {

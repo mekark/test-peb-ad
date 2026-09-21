@@ -515,7 +515,7 @@ export default function ProjectCTASection() {
                   mt-2
                 "
               >
-                Get a custom layout, cost range & 120-day timeline
+                Get a custom layout, cost range & 150-day timeline
               </p>
             </div>
 
