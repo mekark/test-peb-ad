@@ -530,7 +530,7 @@ lg:py-10
                     </p>
 
                     <p className="text-white/60 text-xs mt-0.5">
-                      500+ Successful Industrial Projects
+                      200+ Successful Industrial Projects
                     </p>
                   </div>
                 </div>

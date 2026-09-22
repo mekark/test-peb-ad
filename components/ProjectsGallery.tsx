@@ -9,11 +9,11 @@ const galleryImages = [
     className: "lg:col-span-2 lg:row-span-2",
   },
   {
-    src: "/Images/gal/2.png",
+    src: "/Images/projects/DJI_20260221125016_0027_D.webp",
     className: "",
   },
   {
-    src: "/Images/gal/3.png",
+    src: "/Images/projects/jaguar-showroom.webp",
     className: "",
   },
   {
@@ -21,11 +21,11 @@ const galleryImages = [
     className: "",
   },
   {
-    src:"/Images/gal/5.png",
+    src:"/Images/projects/mipl.webp",
     className: "",
   },
   {
-    src: "/Images/gal/6.png",
+    src: "/Images/projects/sop.webp",
     className: "",
   },
   {
