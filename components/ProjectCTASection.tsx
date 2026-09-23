@@ -4,9 +4,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Loader2, MapPin, Phone } from "lucide-react";
 import { useState } from "react";
+import IndustryTypeSelect from "./IndustryTypeSelect";
 
 const THANK_YOU_URL = "https://peb.mekark.com/thank-you";
 const FORM_ENDPOINT = "/api/enquiry-form";
+
+const sqftOptions = [
+  "10,000 - 20,000 Sq.ft",
+  "20,000 - 30,000 Sq.ft",
+  "30,000 - 50,000 Sq.ft",
+  "50,000+ Sq.ft",
+];
 
 const timelineOptions = [
   "Immediately",
@@ -655,43 +663,14 @@ export default function ProjectCTASection() {
 
                 {/* INDUSTRY */}
                 <div>
-                  <select
-                    name="industry"
+                  <IndustryTypeSelect
                     value={formData.industry}
-                    onChange={handleChange}
-                    className="
-                      w-full
-                      h-[54px]
-                      rounded-[10px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#ECECEC]
-                      px-4
-                      text-[15px]
-                      font-medium
-                      text-black
-                      caret-black
-                      outline-none
-                      focus:border-[#D90916]
-                      focus:bg-white
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <option value="">Select Industry Type*</option>
-
-                    {[
-                      "Warehouse & Logistics",
-                      "Factories, Industries & Plants",
-                      "Manufacturing",
-                      "Multi Storey Steel",
-                      "Cold Storage",
-                    ].map((industry) => (
-                      <option key={industry} value={industry}>
-                        {industry}
-                      </option>
-                    ))}
-                  </select>
+                    onChange={(value) =>
+                      handleChange({
+                        target: { name: "industry", value },
+                      } as React.ChangeEvent<HTMLSelectElement>)
+                    }
+                  />
 
                   {errors.industry && (
                     <p className="text-red-500 text-sm mt-2">
@@ -702,42 +681,16 @@ export default function ProjectCTASection() {
 
                 {/* SQFT */}
                 <div>
-                  <select
-                    name="sqft"
+                  <IndustryTypeSelect
                     value={formData.sqft}
-                    onChange={handleChange}
-                    className="
-                      w-full
-                      h-[54px]
-                      rounded-[10px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#ECECEC]
-                      px-4
-                      text-[15px]
-                      font-medium
-                      text-black
-                      caret-black
-                      outline-none
-                      focus:border-[#D90916]
-                      focus:bg-white
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <option value="">Select Sq.ft Requirement*</option>
-
-                    {[
-                      "10,000 - 20,000 Sq.ft",
-                      "20,000 - 30,000 Sq.ft",
-                      "30,000 - 50,000 Sq.ft",
-                      "50,000+ Sq.ft",
-                    ].map((sqft) => (
-                      <option key={sqft} value={sqft}>
-                        {sqft}
-                      </option>
-                    ))}
-                  </select>
+                    options={sqftOptions}
+                    placeholder="Select Sq.ft Requirement*"
+                    onChange={(value) =>
+                      handleChange({
+                        target: { name: "sqft", value },
+                      } as React.ChangeEvent<HTMLSelectElement>)
+                    }
+                  />
 
                   {errors.sqft && (
                     <p className="text-red-500 text-sm mt-2">{errors.sqft}</p>
@@ -746,37 +699,16 @@ export default function ProjectCTASection() {
 
                 {/* PROJECT TIMELINE */}
                 <div>
-                  <select
-                    name="projectTimeline"
+                  <IndustryTypeSelect
                     value={formData.projectTimeline}
-                    onChange={handleChange}
-                    className="
-                      w-full
-                      h-[54px]
-                      rounded-[10px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#ECECEC]
-                      px-4
-                      text-[15px]
-                      font-medium
-                      text-black
-                      caret-black
-                      outline-none
-                      focus:border-[#D90916]
-                      focus:bg-white
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <option value="">Project Start Timeline*</option>
-
-                    {timelineOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    options={timelineOptions}
+                    placeholder="Project Start Timeline*"
+                    onChange={(value) =>
+                      handleChange({
+                        target: { name: "projectTimeline", value },
+                      } as React.ChangeEvent<HTMLSelectElement>)
+                    }
+                  />
 
                   {errors.projectTimeline && (
                     <p className="text-red-500 text-sm mt-2">
@@ -787,37 +719,16 @@ export default function ProjectCTASection() {
 
                 {/* PROJECT BUDGET */}
                 <div>
-                  <select
-                    name="projectBudget"
+                  <IndustryTypeSelect
                     value={formData.projectBudget}
-                    onChange={handleChange}
-                    className="
-                      w-full
-                      h-[54px]
-                      rounded-[10px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#ECECEC]
-                      px-4
-                      text-[15px]
-                      font-medium
-                      text-black
-                      caret-black
-                      outline-none
-                      focus:border-[#D90916]
-                      focus:bg-white
-                      transition-all
-                      duration-300
-                    "
-                  >
-                    <option value="">Project Budget*</option>
-
-                    {budgetOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
-                      </option>
-                    ))}
-                  </select>
+                    options={budgetOptions}
+                    placeholder="Project Budget*"
+                    onChange={(value) =>
+                      handleChange({
+                        target: { name: "projectBudget", value },
+                      } as React.ChangeEvent<HTMLSelectElement>)
+                    }
+                  />
 
                   {errors.projectBudget && (
                     <p className="text-red-500 text-sm mt-2">
