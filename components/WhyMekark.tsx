@@ -135,6 +135,20 @@ export default function WhyMekark() {
             {/* BUTTON */}
             <motion.a
               href="#quote-form"
+              onClick={(event) => {
+                const target = document.getElementById("quote-form");
+                if (!target) return;
+
+                event.preventDefault();
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
+
+                if (window.location.hash !== "#quote-form") {
+                  window.history.pushState(null, "", "#quote-form");
+                }
+              }}
               whileHover={{
                 scale: 1.03,
                 y: -2,

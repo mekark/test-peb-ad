@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const navItems = [
     {
@@ -163,6 +163,37 @@ export default function Navbar() {
         };
     }, []);
 
+    const scrollToHash = (
+        event: MouseEvent<HTMLAnchorElement>,
+        href: string,
+    ) => {
+        if (!href.startsWith("#")) return;
+
+        const target = document.getElementById(href.slice(1));
+        if (!target) return;
+
+        event.preventDefault();
+
+        const nav = headerRef.current?.querySelector("nav");
+        const headerOffset = nav
+            ? nav.getBoundingClientRect().bottom
+            : 100;
+        const top =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerOffset -
+            16;
+
+        window.scrollTo({
+            top: Math.max(0, top),
+            behavior: "smooth",
+        });
+
+        if (window.location.hash !== href) {
+            window.history.pushState(null, "", href);
+        }
+    };
+
     return (
         <header
             ref={headerRef}
@@ -277,9 +308,10 @@ lg:pt-5        "
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                onClick={() =>
-                                    setActive(item.label)
-                                }
+                                onClick={(event) => {
+                                    setActive(item.label);
+                                    scrollToHash(event, item.href);
+                                }}
                                 className={`
                   relative
 
@@ -340,6 +372,9 @@ lg:pt-5        "
                         {/* CTA BUTTON */}
                         <Link
                             href="#quote-form"
+                            onClick={(event) =>
+                                scrollToHash(event, "#quote-form")
+                            }
                             className="
                 hidden
                 sm:flex
@@ -463,13 +498,18 @@ lg:pt-5        "
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    onClick={() => {
+                                    onClick={(event) => {
                                         setActive(
                                             item.label
                                         );
 
                                         setMobileMenu(
                                             false
+                                        );
+
+                                        scrollToHash(
+                                            event,
+                                            item.href
                                         );
                                     }}
                                     className={`
@@ -496,10 +536,11 @@ lg:pt-5        "
 
                         {/* MOBILE CTA */}
                         <Link
-                            href="#quote"
-                            onClick={() =>
-                                setMobileMenu(false)
-                            }
+                            href="#quote-form"
+                            onClick={(event) => {
+                                setMobileMenu(false);
+                                scrollToHash(event, "#quote-form");
+                            }}
                             className="
                 mt-6
 
