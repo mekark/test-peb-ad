@@ -535,6 +535,8 @@ lg:pt-5        "
                                     key={item.label}
                                     href={item.href}
                                     onClick={(event) => {
+                                        event.preventDefault();
+
                                         setActive(
                                             item.label
                                         );
@@ -543,10 +545,12 @@ lg:pt-5        "
                                             false
                                         );
 
-                                        scrollToHash(
-                                            event,
-                                            item.href
-                                        );
+                                        window.setTimeout(() => {
+                                            scrollToHash(
+                                                event,
+                                                item.href
+                                            );
+                                        }, 400);
                                     }}
                                     className={`
                     text-[15px]
