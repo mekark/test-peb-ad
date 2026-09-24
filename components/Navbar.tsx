@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
 
 const navItems = [
     {
@@ -66,6 +66,31 @@ export default function Navbar() {
                 1000;
 
             return brightness > 180;
+        };
+
+        const clearQuoteHashIfArrived = () => {
+            if (window.location.hash !== "#quote-form") return;
+
+            const target = document.getElementById("quote-form");
+            if (!target) return;
+
+            const navBottom =
+                headerRef.current
+                    ?.querySelector("nav")
+                    ?.getBoundingClientRect().bottom ?? 90;
+            const rect = target.getBoundingClientRect();
+            const visibleTop = Math.max(rect.top, navBottom);
+            const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+            const visible = visibleBottom - visibleTop;
+            const arrived = visible > Math.min(rect.height * 0.45, 160);
+
+            if (arrived) {
+                window.history.replaceState(
+                    null,
+                    "",
+                    window.location.pathname + window.location.search,
+                );
+            }
         };
 
         const updateNavbarTheme = () => {
@@ -140,12 +165,19 @@ export default function Navbar() {
         };
 
         updateNavbarTheme();
+        clearQuoteHashIfArrived();
+
+        const onScroll = () => {
+            updateNavbarTheme();
+            clearQuoteHashIfArrived();
+        };
 
         window.addEventListener(
             "scroll",
-            updateNavbarTheme,
+            onScroll,
             { passive: true }
         );
+        window.addEventListener("hashchange", clearQuoteHashIfArrived);
         window.addEventListener(
             "resize",
             updateNavbarTheme
@@ -154,7 +186,11 @@ export default function Navbar() {
         return () => {
             window.removeEventListener(
                 "scroll",
-                updateNavbarTheme
+                onScroll
+            );
+            window.removeEventListener(
+                "hashchange",
+                clearQuoteHashIfArrived
             );
             window.removeEventListener(
                 "resize",
@@ -162,6 +198,37 @@ export default function Navbar() {
             );
         };
     }, []);
+
+    const scrollToHash = (
+        event: MouseEvent<HTMLAnchorElement>,
+        href: string,
+    ) => {
+        if (!href.startsWith("#")) return;
+
+        const target = document.getElementById(href.slice(1));
+        if (!target) return;
+
+        event.preventDefault();
+
+        const nav = headerRef.current?.querySelector("nav");
+        const headerOffset = nav
+            ? nav.getBoundingClientRect().bottom
+            : 100;
+        const top =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerOffset -
+            16;
+
+        if (window.location.hash !== href) {
+            window.history.pushState(null, "", href);
+        }
+
+        window.scrollTo({
+            top: Math.max(0, top),
+            behavior: "smooth",
+        });
+    };
 
     return (
         <header
@@ -243,7 +310,7 @@ lg:pt-5        "
                     <div className="shrink-0 z-10">
                         <Link href="/">
                             <Image
-                                src="/Images/icon.png"
+                                src="/Images/icon.webp"
                                 alt="Logo"
                                 width={150}
                                 height={40}
@@ -277,9 +344,10 @@ lg:pt-5        "
                             <Link
                                 key={item.label}
                                 href={item.href}
-                                onClick={() =>
-                                    setActive(item.label)
-                                }
+                                onClick={(event) => {
+                                    setActive(item.label);
+                                    scrollToHash(event, item.href);
+                                }}
                                 className={`
                   relative
 
@@ -340,6 +408,9 @@ lg:pt-5        "
                         {/* CTA BUTTON */}
                         <Link
                             href="#quote-form"
+                            onClick={(event) =>
+                                scrollToHash(event, "#quote-form")
+                            }
                             className="
                 hidden
                 sm:flex
@@ -463,7 +534,9 @@ lg:pt-5        "
                                 <Link
                                     key={item.label}
                                     href={item.href}
-                                    onClick={() => {
+                                    onClick={(event) => {
+                                        event.preventDefault();
+
                                         setActive(
                                             item.label
                                         );
@@ -471,6 +544,13 @@ lg:pt-5        "
                                         setMobileMenu(
                                             false
                                         );
+
+                                        window.setTimeout(() => {
+                                            scrollToHash(
+                                                event,
+                                                item.href
+                                            );
+                                        }, 400);
                                     }}
                                     className={`
                     text-[15px]
@@ -496,10 +576,23 @@ lg:pt-5        "
 
                         {/* MOBILE CTA */}
                         <Link
-                            href="#quote"
-                            onClick={() =>
-                                setMobileMenu(false)
-                            }
+                            href="#quote-form"
+                            onClick={(event) => {
+                                event.preventDefault();
+                                setMobileMenu(false);
+
+                                if (window.location.hash !== "#quote-form") {
+                                    window.history.pushState(
+                                        null,
+                                        "",
+                                        "#quote-form",
+                                    );
+                                }
+
+                                window.setTimeout(() => {
+                                    scrollToHash(event, "#quote-form");
+                                }, 380);
+                            }}
                             className="
                 mt-6
 

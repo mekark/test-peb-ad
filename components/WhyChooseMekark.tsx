@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import {
-  ArrowUpRight,
   Crown,
   Factory,
   ShieldCheck,
@@ -320,28 +319,6 @@ export default function WhyChooseMekark() {
                 >
                   {item.desc}
                 </p>
-
-                {/* ARROW */}
-                <motion.div
-                  whileHover={{
-                    x: 4,
-                    y: -4,
-                  }}
-                  className="
-                    absolute
-                    bottom-7
-                    right-7
-                  "
-                >
-                  <ArrowUpRight
-                    className={`
-                      h-11
-                      w-11
-
-                      ${item.highlight ? "text-white" : "text-[#E50818]"}
-                    `}
-                  />
-                </motion.div>
               </motion.div>
             );
           })}

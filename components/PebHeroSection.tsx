@@ -196,7 +196,7 @@ export default function PebHeroSection() {
       {/* BACKGROUND IMAGE */}
       <div className="absolute inset-0">
         <Image
-          src="/Images/HERO.png"
+          src="/Images/HERO.webp"
           alt="PEB Background"
           fill
           priority
@@ -462,7 +462,7 @@ lg:py-10
                   {/* CLIENT LOGOS */}
                   <div className="flex -space-x-2">
                     <Image
-                      src="/Images/Logos/kom.png"
+                      src="/Images/Logos/kom.webp"
                       alt="Client"
                       width={42}
                       height={42}
@@ -475,7 +475,7 @@ lg:py-10
                     />
 
                     <Image
-                      src="/Images/Logos/sarvam.png"
+                      src="/Images/Logos/sarvam.webp"
                       alt="Client"
                       width={42}
                       height={42}
@@ -488,7 +488,7 @@ lg:py-10
                     />
 
                     <Image
-                      src="/Images/Logos/vwu.png"
+                      src="/Images/Logos/vwu.webp"
                       alt="Client"
                       width={42}
                       height={42}

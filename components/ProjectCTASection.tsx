@@ -163,7 +163,7 @@ export default function ProjectCTASection() {
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/Images/footerbg.png"
+          src="/Images/footerbg.webp"
           alt="Industrial Background"
           fill
           priority
@@ -415,7 +415,7 @@ export default function ProjectCTASection() {
                     "
                   >
                     <Image
-                      src="/Images/ws.png"
+                      src="/Images/ws.webp"
                       alt="WhatsApp"
                       width={26}
                       height={26}

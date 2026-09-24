@@ -18,7 +18,7 @@ export default function AboutMekark() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/Images/about.jpg"
+          src="/Images/about.webp"
           alt="Background"
           fill
           priority
@@ -126,7 +126,7 @@ export default function AboutMekark() {
               "
             >
               <Image
-                src="/Images/abut us.png"
+                src="/Images/abut us.webp"
                 alt="Mekark Factory"
                 width={900}
                 height={650}
@@ -255,7 +255,7 @@ export default function AboutMekark() {
                   className="shrink-0"
                 >
                   <Image
-                    src="/Images/ton2.png"
+                    src="/Images/ton2.webp"
                     alt="Tons Icon"
                     width={78}
                     height={78}
@@ -322,7 +322,7 @@ export default function AboutMekark() {
                   className="shrink-0"
                 >
                   <Image
-                    src="/Images/ton1.png"
+                    src="/Images/ton1.webp"
                     alt="Campus Icon"
                     width={78}
                     height={78}

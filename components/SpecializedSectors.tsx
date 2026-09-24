@@ -17,7 +17,7 @@ const sectors = [
         id: "01",
         title: "Warehouse & Logistics",
         icon: Warehouse,
-        bg: "/Images/Spcl/ware.png",
+        bg: "/Images/Spcl/ware.webp",
         heading: "Smart Warehousing Infrastructure",
         desc: "Built for velocity, accuracy, and seamless movement — redefining modern storage.",
         points: [
@@ -33,7 +33,7 @@ const sectors = [
         id: "02",
         title: "Factories, Industries & Plants",
         icon: Factory,
-        bg: "/Images/Spcl/fact.png",
+        bg: "/Images/Spcl/fact.webp",
         heading: "High-Performance Industrial Facilities",
         desc: "Engineered environments for continuous production and operational excellence.",
         points: [
@@ -49,7 +49,7 @@ const sectors = [
         id: "03",
         title: "Manufacturing",
         icon: Cog,
-        bg: "/Images/Spcl/MAnu.png",
+        bg: "/Images/Spcl/MAnu.webp",
         heading: "Future-Ready Production Spaces",
         desc: "Where innovation meets efficiency in every square meter.",
         points: [
@@ -65,7 +65,7 @@ const sectors = [
         id: "04",
         title: "Multi Storey Steel Buildings",
         icon: Building,
-        bg: "/Images/Spcl/Multi.png",
+        bg: "/Images/Spcl/Multi.webp",
         heading: "Vertical Steel Infrastructure",
         desc: "Optimized for urban expansion and structural excellence.",
         points: [
@@ -81,7 +81,7 @@ const sectors = [
         id: "05",
         title: "Clean Rooms & Cold Storage",
         icon: Snowflake,
-        bg: "/Images/Spcl/cold.png",
+        bg: "/Images/Spcl/cold.webp",
         heading: "Temperature-Controlled Engineering",
         desc: "Precision-built environments preserving quality, safety, and compliance.",
         points: [

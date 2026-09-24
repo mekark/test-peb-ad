@@ -10,7 +10,7 @@ export default function WorldClassEngineering() {
       {/* WORLD MAP BACKGROUND */}
       <div className="absolute inset-0 z-0 opacity-20">
         <Image
-          src="/Images/earth.png"
+          src="/Images/earth.webp"
           alt="World Map"
           fill
           className="object-cover
@@ -288,7 +288,7 @@ export default function WorldClassEngineering() {
         "
                   >
                     <Image
-                      src="/Images/iso (1).jpg"
+                      src="/Images/iso (1).webp"
                       alt="ISO"
                       width={88}
                       height={88}
@@ -348,7 +348,7 @@ export default function WorldClassEngineering() {
       "
                 >
                   <Image
-                    src="/Images/mbma.png"
+                    src="/Images/mbma.webp"
                     alt="MBMA"
                     width={150}
                     height={70}
