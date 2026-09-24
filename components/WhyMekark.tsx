@@ -140,14 +140,15 @@ export default function WhyMekark() {
                 if (!target) return;
 
                 event.preventDefault();
-                target.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
-                });
 
                 if (window.location.hash !== "#quote-form") {
                   window.history.pushState(null, "", "#quote-form");
                 }
+
+                target.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                });
               }}
               whileHover={{
                 scale: 1.03,

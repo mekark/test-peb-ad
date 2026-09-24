@@ -68,6 +68,31 @@ export default function Navbar() {
             return brightness > 180;
         };
 
+        const clearQuoteHashIfArrived = () => {
+            if (window.location.hash !== "#quote-form") return;
+
+            const target = document.getElementById("quote-form");
+            if (!target) return;
+
+            const navBottom =
+                headerRef.current
+                    ?.querySelector("nav")
+                    ?.getBoundingClientRect().bottom ?? 90;
+            const rect = target.getBoundingClientRect();
+            const visibleTop = Math.max(rect.top, navBottom);
+            const visibleBottom = Math.min(rect.bottom, window.innerHeight);
+            const visible = visibleBottom - visibleTop;
+            const arrived = visible > Math.min(rect.height * 0.45, 160);
+
+            if (arrived) {
+                window.history.replaceState(
+                    null,
+                    "",
+                    window.location.pathname + window.location.search,
+                );
+            }
+        };
+
         const updateNavbarTheme = () => {
             const header = headerRef.current;
             const home = document.getElementById("home");
@@ -140,12 +165,19 @@ export default function Navbar() {
         };
 
         updateNavbarTheme();
+        clearQuoteHashIfArrived();
+
+        const onScroll = () => {
+            updateNavbarTheme();
+            clearQuoteHashIfArrived();
+        };
 
         window.addEventListener(
             "scroll",
-            updateNavbarTheme,
+            onScroll,
             { passive: true }
         );
+        window.addEventListener("hashchange", clearQuoteHashIfArrived);
         window.addEventListener(
             "resize",
             updateNavbarTheme
@@ -154,7 +186,11 @@ export default function Navbar() {
         return () => {
             window.removeEventListener(
                 "scroll",
-                updateNavbarTheme
+                onScroll
+            );
+            window.removeEventListener(
+                "hashchange",
+                clearQuoteHashIfArrived
             );
             window.removeEventListener(
                 "resize",
@@ -184,14 +220,14 @@ export default function Navbar() {
             headerOffset -
             16;
 
+        if (window.location.hash !== href) {
+            window.history.pushState(null, "", href);
+        }
+
         window.scrollTo({
             top: Math.max(0, top),
             behavior: "smooth",
         });
-
-        if (window.location.hash !== href) {
-            window.history.pushState(null, "", href);
-        }
     };
 
     return (
