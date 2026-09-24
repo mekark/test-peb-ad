@@ -3,18 +3,18 @@
 import Image from "next/image";
 
 const clientLogos = [
-  "/Images/Logos/lt.png",
-  "/Images/Logos/tvs.png",
-  "/Images/Logos/tata.png",
-  "/Images/Logos/stetter.png",
-  "/Images/Logos/srf.png",
-  "/Images/Logos/orbittal.png",
-  "/Images/Logos/sarvam.png",
-  "/Images/Logos/sanmar.png",
-  "/Images/Logos/sanmar1.png",
-  "/Images/Logos/reliance.png",
-  "/Images/Logos/voltas.png",
-  "/Images/Logos/vwu.png",
+  "/Images/Logos/lt.webp",
+  "/Images/Logos/tvs.webp",
+  "/Images/Logos/tata.webp",
+  "/Images/Logos/stetter.webp",
+  "/Images/Logos/srf.webp",
+  "/Images/Logos/orbittal.webp",
+  "/Images/Logos/sarvam.webp",
+  "/Images/Logos/sanmar.webp",
+  "/Images/Logos/sanmar1.webp",
+  "/Images/Logos/reliance.webp",
+  "/Images/Logos/voltas.webp",
+  "/Images/Logos/vwu.webp",
 ];
 
 export default function TrustedClientsSection() {

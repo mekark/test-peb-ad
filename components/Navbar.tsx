@@ -243,7 +243,7 @@ lg:pt-5        "
                     <div className="shrink-0 z-10">
                         <Link href="/">
                             <Image
-                                src="/Images/icon.png"
+                                src="/Images/icon.webp"
                                 alt="Logo"
                                 width={150}
                                 height={40}

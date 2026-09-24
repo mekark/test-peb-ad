@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const galleryImages = [
   {
-    src: "/Images/gal/1.png",
+    src: "/Images/gal/1.webp",
     className: "lg:col-span-2 lg:row-span-2",
   },
   {
@@ -17,7 +17,7 @@ const galleryImages = [
     className: "",
   },
   {
-    src:"/Images/gal/4.png",
+    src:"/Images/gal/4.webp",
     className: "",
   },
   {
@@ -29,11 +29,11 @@ const galleryImages = [
     className: "",
   },
   {
-    src: "/Images/gal/7.png",
+    src: "/Images/gal/7.webp",
     className: "",
   },
   {
-    src:"/Images/gal/8.jpg",
+    src:"/Images/gal/8.webp",
     className: "lg:col-span-2 lg:row-span-2",
   },
 ];

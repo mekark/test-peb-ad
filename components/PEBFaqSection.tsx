@@ -236,7 +236,7 @@ export default function PEBFaqSection() {
                 "
               >
                 <Image
-                  src="/Images/faq.png"
+                  src="/Images/faq.webp"
                   alt="Industrial Building"
                   width={620}
                   height={920}

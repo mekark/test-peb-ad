@@ -13,12 +13,12 @@ const WHATSAPP_MESSAGE =
   "Hello Mekark, I would like to discuss my PEB industrial construction project.";
 
 const factoryImages = [
-  "/Images/new/i1.png",
-  "/Images/new/i2.png",
-  "/Images/new/i3.png",
-  "/Images/new/i4.png",
-  "/Images/new/i5.png",
-  "/Images/new/i6.png",
+  "/Images/new/i1.webp",
+  "/Images/new/i2.webp",
+  "/Images/new/i3.webp",
+  "/Images/new/i4.webp",
+  "/Images/new/i5.webp",
+  "/Images/new/i6.webp",
 ];
 
 export default function ManufacturingHub() {
