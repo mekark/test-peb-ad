@@ -574,8 +574,20 @@ lg:pt-5        "
                         <Link
                             href="#quote-form"
                             onClick={(event) => {
+                                event.preventDefault();
                                 setMobileMenu(false);
-                                scrollToHash(event, "#quote-form");
+
+                                if (window.location.hash !== "#quote-form") {
+                                    window.history.pushState(
+                                        null,
+                                        "",
+                                        "#quote-form",
+                                    );
+                                }
+
+                                window.setTimeout(() => {
+                                    scrollToHash(event, "#quote-form");
+                                }, 380);
                             }}
                             className="
                 mt-6
