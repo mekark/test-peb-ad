@@ -102,7 +102,7 @@ export default function WhyMekark() {
             >
               <p
                 className="
-                  font-inter
+                  font-manrope
                   text-[17px]
                   font-normal
                   leading-[32px]
@@ -123,7 +123,7 @@ export default function WhyMekark() {
 
               <p
                 className="
-                  font-inter
+                  font-manrope
                   text-[17px]
                   font-normal
                   leading-[32px]

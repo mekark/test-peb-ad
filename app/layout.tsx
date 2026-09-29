@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import ClientLayoutShell from "@/components/ClientLayoutShell";
-import { inter, manrope } from "@/lib/fonts";
+import { manrope } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${manrope.variable} ${inter.variable}`}
+      className={manrope.variable}
     >
       <head>
         <link
@@ -49,7 +49,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="font-sans antialiased">
+      <body className="font-manrope antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

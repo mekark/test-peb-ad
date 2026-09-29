@@ -37,7 +37,7 @@
   .hero .badge {
     width: fit-content;
     padding: 9px 17px;
-    font-family: var(--font-inter-next), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(10px, 0.834vw, 16px);
     line-height: 21px;
   }
@@ -78,7 +78,7 @@
   }
 
   .features > div > span {
-    font-family: var(--font-inter-next), sans-serif;
+    font-family: var(--font-manrope), sans-serif;
     font-size: clamp(11px, 0.9375vw, 18px);
     font-weight: 400;
     line-height: 20px;

@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowUp, Phone } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 import { useEffect, useState } from "react";
 
 /** Set to true to restore floating quick-action buttons. */
@@ -74,7 +74,7 @@ export default function FloatingActions() {
           aria-label="Call Mekark"
           className={`${actionButtonClassName} bg-[#C4161C] text-white shadow-[0_20px_42px_-20px_rgba(196,22,28,0.72)] focus:ring-4 focus:ring-[#C4161C]/30`}
         >
-          <Phone className="h-5 w-5 sm:h-6 sm:w-6" />
+          <span className="text-sm font-bold">Call</span>
         </a>
       ) : null}
     </div>

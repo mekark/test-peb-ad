@@ -1,7 +1,13 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
+import { QUOTE_FORM_ID } from "@/lib/enquiryFormConstants";
+import HeroQuoteFormSkeleton from "./HeroQuoteFormSkeleton";
 import PebHeroContactButtons from "./PebHeroContactButtons";
-import PebHeroQuoteForm, { QUOTE_FORM_ID } from "./PebHeroQuoteForm";
 import styles from "./PebHeroSection.module.css";
+
+const PebHeroQuoteForm = dynamic(() => import("./PebHeroQuoteForm"), {
+  loading: () => <HeroQuoteFormSkeleton />,
+});
 
 const clientLogos = [
   { src: "/Images/Logos/vwu.webp", alt: "VWU" },

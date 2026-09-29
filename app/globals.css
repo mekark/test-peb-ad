@@ -10,7 +10,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-manrope: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
-  --font-inter: var(--font-inter-next), ui-sans-serif, system-ui, sans-serif;
   /* lg = laptop; xl/2xl = wide desktop; 3xl (1920px+) = Figma large frame */
   --breakpoint-3xl: 120rem;
   /* Figma hero palette */

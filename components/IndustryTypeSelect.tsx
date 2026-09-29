@@ -57,8 +57,30 @@ export default function IndustryTypeSelect({
 
   const items = ["", ...options];
 
+  const nativeClassName = isFigma
+    ? heroNativeSelectClassName()
+    : "type-form-input appearance-none pr-10";
+
   return (
-    <div ref={rootRef} className={`relative min-w-0 max-w-full ${open ? "z-30" : ""}`}>
+    <>
+      <select
+        aria-label={placeholder}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`${nativeClassName} lg:hidden`}
+      >
+        <option value="">{placeholder}</option>
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+
+      <div
+        ref={rootRef}
+        className={`relative hidden min-w-0 max-w-full lg:block ${open ? "z-30" : ""}`}
+      >
       <button
         type="button"
         aria-haspopup="listbox"
@@ -192,6 +214,11 @@ export default function IndustryTypeSelect({
           })}
         </ul>
       )}
-    </div>
+      </div>
+    </>
   );
+}
+
+function heroNativeSelectClassName() {
+  return "h-[46px] w-full appearance-none rounded-[8px] border border-[#E2E2E2] bg-[#F0F0F0] px-4 pr-10 text-[12px] font-medium text-black outline-none transition-all duration-300 focus:border-[#C4161C] focus:bg-white";
 }

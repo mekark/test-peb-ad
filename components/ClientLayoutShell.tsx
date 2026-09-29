@@ -1,6 +1,10 @@
 "use client";
 
-import FloatingActions from "@/components/FloatingActions";
+import dynamic from "next/dynamic";
+
+const FloatingActions = dynamic(() => import("@/components/FloatingActions"), {
+  ssr: false,
+});
 
 export default function ClientLayoutShell({
   children,
