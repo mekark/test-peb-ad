@@ -61,25 +61,7 @@ export default function RootLayout({
         </noscript>
 
         {children}
-        <FloatingWhatsApp />
 
-        <Script
-          id="tawk-to-init"
-          strategy="lazyOnload"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.Tawk_API = window.Tawk_API || {};
-              window.Tawk_LoadStart = new Date();
-            `,
-          }}
-        />
-        <Script
-          id="tawk-to-widget"
-          src="https://embed.tawk.to/69fd7e65427c251c368c1e92/1jo33bfff"
-          strategy="lazyOnload"
-          charSet="UTF-8"
-          crossOrigin="anonymous"
-        />
       </body>
     </html>
   );
