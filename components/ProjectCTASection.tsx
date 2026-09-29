@@ -131,14 +131,24 @@ export default function ProjectCTASection() {
   return (
     <section className="relative overflow-hidden bg-[#090909] xl:min-h-[760px]">
       <Image
+        src="/Images/footerbg-mobile.webp"
+        alt=""
+        fill
+        aria-hidden
+        unoptimized
+        loading="lazy"
+        sizes="100vw"
+        className="object-cover opacity-30 lg:hidden"
+      />
+      <Image
         src="/Images/footerbg.webp"
         alt=""
         fill
         aria-hidden
         loading="lazy"
-        sizes="(max-width: 768px) 100vw, 1280px"
-        quality={60}
-        className="object-cover opacity-30"
+        sizes="1280px"
+        quality={55}
+        className="hidden object-cover opacity-30 lg:block"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black to-[54%] lg:bg-[linear-gradient(-63deg,rgba(16,21,25,0)_0%,#080B0F_83%)]" />
       <div className="absolute left-[180px] top-[-61px] h-[274px] w-[274px] rounded-full bg-[#E40015]/30 blur-[62px] lg:left-auto lg:right-[-213px] lg:top-[-267px] lg:h-[1035px] lg:w-[1035px]" />

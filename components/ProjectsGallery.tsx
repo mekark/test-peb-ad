@@ -1,12 +1,12 @@
 import Image from "next/image";
 
 const galleryImages = [
-  "/Images/gal/1.webp",
-  "/Images/projects/DJI_20260221125016_0027_D.webp",
-  "/Images/projects/jaguar-showroom.webp",
-  "/Images/gal/4.webp",
-  "/Images/projects/mipl.webp",
-  "/Images/projects/sop.webp",
+  "/Images/gal/1-720.webp",
+  "/Images/projects/DJI_20260221125016_0027_D-720.webp",
+  "/Images/projects/jaguar-showroom-720.webp",
+  "/Images/gal/4-720.webp",
+  "/Images/projects/mipl-720.webp",
+  "/Images/projects/sop-720.webp",
 ];
 
 type GalleryTile = {
@@ -25,7 +25,7 @@ const galleryTiles: GalleryTile[] = [
       "col-span-2 h-[220px] w-full sm:h-[320px] lg:col-span-2 lg:row-span-2 lg:h-[520px] 2xl:absolute 2xl:left-0 2xl:top-0 2xl:h-[643px] 2xl:w-[32.33%]",
     imageClassName: "object-cover 2xl:object-[42%_center]",
     sizes:
-      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 520px",
+      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 720px",
   },
   {
     src: galleryImages[1],
@@ -33,7 +33,7 @@ const galleryTiles: GalleryTile[] = [
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-0 2xl:h-[477px] 2xl:w-[24.1%]",
     sizes:
-      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 380px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 480px",
   },
   {
     src: galleryImages[2],
@@ -41,7 +41,7 @@ const galleryTiles: GalleryTile[] = [
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[59.15%] 2xl:top-0 2xl:h-[477px] 2xl:w-[40.85%]",
     sizes:
-      "(max-width: 1023px) 50vw, (max-width: 1535px) 50vw, 640px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 50vw, 720px",
   },
   {
     src: galleryImages[3],
@@ -49,7 +49,7 @@ const galleryTiles: GalleryTile[] = [
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-0 2xl:top-[663px] 2xl:h-[305px] 2xl:w-[32.33%]",
     sizes:
-      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 520px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 480px",
   },
   {
     src: galleryImages[4],
@@ -57,7 +57,7 @@ const galleryTiles: GalleryTile[] = [
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
     sizes:
-      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 520px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 480px",
   },
   {
     src: galleryImages[5],
@@ -65,7 +65,7 @@ const galleryTiles: GalleryTile[] = [
     className:
       "col-span-2 h-[196px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[67.56%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
     sizes:
-      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 520px",
+      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 720px",
   },
 ];
 
@@ -91,7 +91,7 @@ function ImageTile({
         alt={alt}
         fill
         sizes={sizes}
-        quality={75}
+        quality={70}
         className={imageClassName}
       />
     </div>

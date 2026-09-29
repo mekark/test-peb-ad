@@ -275,12 +275,12 @@ export default function PebHeroSection() {
 
       <div className="absolute left-1/2 top-[419px] h-[1556px] w-[max(505px,100%)] -translate-x-1/2 lg:hidden">
         <Image
-          src="/Images/figma-mobile/asset-09.webp"
+          src="/Images/figma-mobile/asset-09-520.webp"
           alt="Steel building construction site"
           fill
-          loading="lazy"
-          sizes="505px"
-          quality={70}
+          unoptimized
+          priority
+          sizes="520px"
           className="object-cover object-center"
         />
       </div>
@@ -339,22 +339,22 @@ export default function PebHeroSection() {
             <div className="relative -mx-5 h-[184px] w-[calc(100%_+_40px)] sm:-mx-10 sm:w-[calc(100%_+_80px)] overflow-hidden bg-[#060606] lg:hidden">
               <div className="absolute left-1/2 top-[-18.66px] h-[282.473px] w-[max(501.908px,128.69%)] -translate-x-1/2">
                 <Image
-                  src="/Images/figma-mobile/asset-13.webp"
+                  src="/Images/figma-mobile/asset-13-520.webp"
                   alt="Industrial project site"
                   fill
-                  sizes="504px"
-                  quality={75}
+                  unoptimized
+                  sizes="520px"
                   className="object-cover"
                 />
               </div>
               <div className="absolute inset-x-0 top-0 h-[114px] bg-[linear-gradient(180deg,#060606_0%,rgba(62,62,62,0.776)_45.62%,rgba(105,105,105,0.604)_76.21%,rgba(255,255,255,0)_161.47%)]" />
               <div className="absolute left-1/2 top-[83.82px] h-[179.986px] w-[max(502.286px,128.79%)] -translate-x-1/2">
                 <Image
-                  src="/Images/figma-mobile/factory-original.webp"
+                  src="/Images/figma-mobile/factory-original-520.webp"
                   alt="Completed blue industrial building"
                   fill
-                  sizes="504px"
-                  quality={75}
+                  unoptimized
+                  sizes="520px"
                   className="object-cover"
                 />
               </div>

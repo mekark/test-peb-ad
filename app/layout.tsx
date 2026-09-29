@@ -22,6 +22,13 @@ export default function RootLayout({
       className={`${manrope.variable} ${inter.variable}`}
     >
       <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/Images/figma-mobile/asset-09-520.webp"
+          fetchPriority="high"
+          media="(max-width: 1023px)"
+        />
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"

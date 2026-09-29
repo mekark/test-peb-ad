@@ -102,12 +102,12 @@ export default function PEBFaqSection() {
 
           <div className="relative mt-0 h-[220px] w-full overflow-hidden lg:mt-10 lg:h-auto lg:overflow-visible">
             <Image
-              src="/Images/faq.webp"
+              src="/Images/faq-720.webp"
               alt="Industrial steel building"
-              width={947}
-              height={631}
-              sizes="(max-width: 1023px) 100vw, 947px"
-              quality={75}
+              width={720}
+              height={480}
+              sizes="(max-width: 1023px) 100vw, 720px"
+              quality={70}
               className="h-full w-full object-cover lg:hidden"
             />
             <Image
