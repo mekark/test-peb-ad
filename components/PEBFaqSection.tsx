@@ -106,6 +106,8 @@ export default function PEBFaqSection() {
               alt="Industrial steel building"
               width={947}
               height={631}
+              sizes="(max-width: 1023px) 100vw, 947px"
+              quality={75}
               className="h-full w-full object-cover lg:hidden"
             />
             <Image

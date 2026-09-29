@@ -132,9 +132,12 @@ export default function ProjectCTASection() {
     <section className="relative overflow-hidden bg-[#090909] xl:min-h-[760px]">
       <Image
         src="/Images/footerbg.webp"
-        alt="Construction site background"
+        alt=""
         fill
-        sizes="100vw"
+        aria-hidden
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 1280px"
+        quality={60}
         className="object-cover opacity-30"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black to-[54%] lg:bg-[linear-gradient(-63deg,rgba(16,21,25,0)_0%,#080B0F_83%)]" />

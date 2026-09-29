@@ -14,6 +14,7 @@ type GalleryTile = {
   alt: string;
   className: string;
   imageClassName?: string;
+  sizes: string;
 };
 
 const galleryTiles: GalleryTile[] = [
@@ -23,36 +24,48 @@ const galleryTiles: GalleryTile[] = [
     className:
       "col-span-2 h-[220px] w-full sm:h-[320px] lg:col-span-2 lg:row-span-2 lg:h-[520px] 2xl:absolute 2xl:left-0 2xl:top-0 2xl:h-[643px] 2xl:w-[32.33%]",
     imageClassName: "object-cover 2xl:object-[42%_center]",
+    sizes:
+      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 520px",
   },
   {
     src: galleryImages[1],
     alt: "PEB construction project",
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-0 2xl:h-[477px] 2xl:w-[24.1%]",
+    sizes:
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 380px",
   },
   {
     src: galleryImages[2],
     alt: "Industrial building interior project",
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[59.15%] 2xl:top-0 2xl:h-[477px] 2xl:w-[40.85%]",
+    sizes:
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 50vw, 640px",
   },
   {
     src: galleryImages[3],
     alt: "Completed factory project",
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-0 2xl:top-[663px] 2xl:h-[305px] 2xl:w-[32.33%]",
+    sizes:
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 520px",
   },
   {
     src: galleryImages[4],
     alt: "Steel structure construction project",
     className:
       "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
+    sizes:
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 520px",
   },
   {
     src: galleryImages[5],
     alt: "Industrial project site",
     className:
       "col-span-2 h-[196px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[67.56%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
+    sizes:
+      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 520px",
   },
 ];
 
@@ -61,6 +74,7 @@ type ImageTileProps = {
   alt: string;
   className: string;
   imageClassName?: string;
+  sizes: string;
 };
 
 function ImageTile({
@@ -68,6 +82,7 @@ function ImageTile({
   alt,
   className,
   imageClassName = "object-cover",
+  sizes,
 }: ImageTileProps) {
   return (
     <div className={`relative overflow-hidden bg-[#D9D9D9] ${className}`}>
@@ -75,7 +90,8 @@ function ImageTile({
         src={src}
         alt={alt}
         fill
-        sizes="(min-width: 1024px) 50vw, 100vw"
+        sizes={sizes}
+        quality={75}
         className={imageClassName}
       />
     </div>
@@ -113,6 +129,7 @@ export default function ProjectsGallery() {
               alt={tile.alt}
               className={tile.className}
               imageClassName={tile.imageClassName}
+              sizes={tile.sizes}
             />
           ))}
         </div>

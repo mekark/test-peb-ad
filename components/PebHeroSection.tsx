@@ -127,7 +127,8 @@ function ClientLogosCarousel() {
               alt={index < clientLogos.length ? logo.alt : ""}
               width={264}
               height={152}
-              quality={90}
+              sizes="132px"
+              quality={75}
               aria-hidden={index >= clientLogos.length}
               className="h-full w-full object-contain"
             />
@@ -278,7 +279,8 @@ export default function PebHeroSection() {
           alt="Steel building construction site"
           fill
           loading="lazy"
-          sizes="(max-width: 505px) 505px, 100vw"
+          sizes="505px"
+          quality={70}
           className="object-cover object-center"
         />
       </div>
@@ -340,7 +342,8 @@ export default function PebHeroSection() {
                   src="/Images/figma-mobile/asset-13.webp"
                   alt="Industrial project site"
                   fill
-                  sizes="129vw"
+                  sizes="504px"
+                  quality={75}
                   className="object-cover"
                 />
               </div>
@@ -350,7 +353,8 @@ export default function PebHeroSection() {
                   src="/Images/figma-mobile/factory-original.webp"
                   alt="Completed blue industrial building"
                   fill
-                  sizes="129vw"
+                  sizes="504px"
+                  quality={75}
                   className="object-cover"
                 />
               </div>
