@@ -1,10 +1,4 @@
-import { Space_Grotesk } from "next/font/google";
-
-const featureNumberFont = Space_Grotesk({
-  subsets: ["latin"],
-  weight: "700",
-  display: "swap",
-});
+import { spaceGroteskBold } from "@/lib/fonts";
 
 type Feature = {
   id: string;
@@ -176,7 +170,7 @@ export default function WhyChooseMekark() {
                 }`}
               >
                 <span
-                  className={`${featureNumberFont.className} text-[28px] font-bold leading-[27px] tracking-[1.6px] 3xl:text-[34px] ${
+                  className={`${spaceGroteskBold.className} text-[28px] font-bold leading-[27px] tracking-[1.6px] 3xl:text-[34px] ${
                     [1, 3, 5, 8].includes(index) ? "text-[#FB2C36]" : "text-white"
                   }`}
                 >

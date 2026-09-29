@@ -209,7 +209,7 @@ export default function ManufacturingHub() {
                 2xl:leading-[34px]
               "
             >
-              Inside Mekark's Manufacturing Excellence
+              {"Inside Mekark's Manufacturing Excellence"}
             </h3>
 
             {/* PARAGRAPHS */}

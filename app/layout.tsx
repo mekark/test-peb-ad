@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
 import FloatingWhatsApp from "@/components/Whatsapp";
+import { inter, manrope } from "@/lib/fonts";
 import "./globals.css";
-
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-inter-next",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: "PEB Manufacturer in Chennai - Mekark",

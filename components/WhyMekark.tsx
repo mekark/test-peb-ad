@@ -115,7 +115,7 @@ export default function WhyMekark() {
                 Pre Engineered Building Manufacturer and Industrial EPC
                 Contractor, we eliminate third-party dependencies to deliver
                 consistent quality, faster execution and complete
-                accountability. Whether you're planning factory construction,
+                accountability. Whether you&apos;re planning factory construction,
                 warehouse construction or an industrial steel building, our
                 integrated design-build approach provides a single point of
                 responsibility from concept to commissioning.

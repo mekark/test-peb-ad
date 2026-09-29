@@ -1,20 +1,6 @@
 import Image from "next/image";
 
-import { Space_Grotesk } from "next/font/google";
-
-
-
-const processNumberFont = Space_Grotesk({
-
-  subsets: ["latin"],
-
-  weight: "700",
-
-  display: "swap",
-
-});
-
-
+import { spaceGroteskBold } from "@/lib/fonts";
 
 type ProcessStep = {
 
@@ -292,7 +278,7 @@ export default function ManufacturingProcess() {
 
                   <p
 
-                    className={`${processNumberFont.className} text-[18px] font-bold leading-[23px] ${step.numberClassName ?? "text-[#FF8F92]"}`}
+                    className={`${spaceGroteskBold.className} text-[18px] font-bold leading-[23px] ${step.numberClassName ?? "text-[#FF8F92]"}`}
 
                   >
 
