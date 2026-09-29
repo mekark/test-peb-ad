@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-import { spaceGroteskBold } from "@/lib/fonts";
 
 type ProcessStep = {
 
@@ -278,7 +277,7 @@ export default function ManufacturingProcess() {
 
                   <p
 
-                    className={`${spaceGroteskBold.className} text-[18px] font-bold leading-[23px] ${step.numberClassName ?? "text-[#FF8F92]"}`}
+                    className={`font-manrope text-[18px] font-bold leading-[23px] ${step.numberClassName ?? "text-[#FF8F92]"}`}
 
                   >
 

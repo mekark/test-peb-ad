@@ -135,8 +135,8 @@ export default function ProjectCTASection() {
         alt=""
         fill
         aria-hidden
-        unoptimized
         loading="lazy"
+        quality={55}
         sizes="100vw"
         className="object-cover opacity-30 lg:hidden"
       />

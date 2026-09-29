@@ -1,6 +1,6 @@
 "use client";
 
-import FloatingWhatsApp from "@/components/Whatsapp";
+import FloatingActions from "@/components/FloatingActions";
 
 export default function ClientLayoutShell({
   children,
@@ -10,7 +10,7 @@ export default function ClientLayoutShell({
   return (
     <>
       {children}
-      <FloatingWhatsApp />
+      <FloatingActions />
     </>
   );
 }

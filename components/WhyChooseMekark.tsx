@@ -1,5 +1,3 @@
-import { spaceGroteskBold } from "@/lib/fonts";
-
 type Feature = {
   id: string;
   title: string;
@@ -170,7 +168,7 @@ export default function WhyChooseMekark() {
                 }`}
               >
                 <span
-                  className={`${spaceGroteskBold.className} text-[28px] font-bold leading-[27px] tracking-[1.6px] 3xl:text-[34px] ${
+                  className={`font-manrope text-[28px] font-bold leading-[27px] tracking-[1.6px] 3xl:text-[34px] ${
                     [1, 3, 5, 8].includes(index) ? "text-[#FB2C36]" : "text-white"
                   }`}
                 >

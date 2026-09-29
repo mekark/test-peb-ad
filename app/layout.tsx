@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import FloatingWhatsApp from "@/components/Whatsapp";
+import ClientLayoutShell from "@/components/ClientLayoutShell";
 import { inter, manrope } from "@/lib/fonts";
 import "./globals.css";
 
@@ -60,8 +60,7 @@ export default function RootLayout({
           />
         </noscript>
 
-        {children}
-
+        <ClientLayoutShell>{children}</ClientLayoutShell>
       </body>
     </html>
   );
