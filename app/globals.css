@@ -8,22 +8,71 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-manrope: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-inter: var(--font-inter-next), ui-sans-serif, system-ui, sans-serif;
+  /* lg = laptop; xl/2xl = wide desktop; 3xl (1920px+) = Figma large frame */
+  --breakpoint-3xl: 120rem;
+  /* Figma hero palette */
+  --color-mekark-cod-gray: #060606;
+  --color-mekark-firebrick: #c4161c;
+  --color-mekark-firebrick-alt: #cc000a;
+  --color-mekark-accent-red: #e5091f;
+  --color-mekark-dot-red: #e40015;
+  --color-mekark-body-muted: #a9a9a9;
+  --color-mekark-label-muted: #9a9a9a;
+  --color-mekark-trust-eyebrow: #fa7783;
+  --color-mekark-gainsboro: #e2e2e2;
+  --color-mekark-whitesmoke: #f9f6f7;
+  --color-mekark-form-muted: #757575;
+  --color-mekark-form-ink: #080808;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .section-container {
+    @apply mx-auto w-full max-w-[1450px] px-5 sm:px-8 lg:px-10 2xl:max-w-[1680px] 2xl:px-16 3xl:px-20;
+  }
+
+  .section-container-wide {
+    @apply mx-auto w-full max-w-[1760px] px-5 sm:px-8 lg:px-10 xl:px-16 2xl:max-w-[1680px] 2xl:px-16 3xl:max-w-[1760px] 3xl:px-20;
+  }
+
+  .type-eyebrow {
+    @apply text-[11px] uppercase tracking-[1.4px] lg:text-[12px] lg:tracking-[1.6px] xl:text-[13px] 2xl:text-[14px] 3xl:text-[16px] 3xl:tracking-[2px];
+  }
+
+  .type-body {
+    @apply text-[15px] leading-[26px] lg:text-[16px] lg:leading-[28px] xl:text-[17px] xl:leading-[28px] 2xl:text-[18px] 2xl:leading-[30px] 3xl:text-[20px] 3xl:leading-[32px];
+  }
+
+  .type-body-muted {
+    @apply text-[15px] leading-[26px] text-[#64748B] lg:text-[16px] lg:leading-[28px] xl:text-[17px] xl:leading-[28px] 2xl:text-[18px] 2xl:leading-[30px] 3xl:text-[20px] 3xl:leading-[32px];
+  }
+
+  .type-section-heading {
+    @apply font-manrope text-[28px] font-bold leading-8 sm:text-[40px] sm:leading-[46px] lg:text-[40px] lg:leading-[46px] xl:text-[48px] xl:leading-[52px] 2xl:text-[52px] 2xl:leading-[58px] 3xl:text-[66px] 3xl:leading-[73px];
+  }
+
+  .type-section-subtitle {
+    @apply font-manrope font-medium text-[#64748B] text-[14px] leading-5 lg:text-[18px] lg:leading-[28px] xl:text-[20px] xl:leading-[30px] 2xl:text-[22px] 2xl:leading-[32px] 3xl:text-[24px] 3xl:leading-9;
+  }
+
+  .type-form-label {
+    @apply mb-1.5 block font-manrope text-[14px] font-bold text-[#5A5A5A] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:mb-2 3xl:text-[16px];
+  }
+
+  .type-form-input {
+    @apply h-[46px] w-full rounded-[8px] border border-[#E2E2E2] bg-[#F0F0F0] px-[17px] text-[12px] font-normal text-black caret-black outline-none transition-all duration-300 placeholder:text-[#757575] focus:border-[#C4161C] focus:bg-white lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:h-[54px] 3xl:text-[14px];
   }
 }
 
+html,
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
 }
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -38,6 +87,22 @@ body {
   width: max-content;
   animation: marquee 10s linear infinite;
 }
+
+.hero-logo-marquee-track {
+  will-change: transform;
+  animation: hero-logo-marquee 28s linear infinite;
+}
+
+@keyframes hero-logo-marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }

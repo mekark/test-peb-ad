@@ -163,7 +163,7 @@ export default function TestimonialsSection() {
                 }}
             />
 
-            <div className="relative z-10 mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-14">
+            <div className="section-container relative z-10 lg:px-14">
                 {/* TOP */}
                 <div className="mb-14 flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
                     <motion.div
@@ -201,9 +201,14 @@ export default function TestimonialsSection() {
                                 leading-[1.1]
                                 tracking-[-1px]
                                 text-[#121212]
-                                sm:text-[42px]
+                                sm:text-[40px]
+                                sm:leading-[46px]
                                 sm:tracking-[-2px]
-                                lg:text-[52px]
+                                lg:text-[40px]
+                                lg:leading-[46px]
+                                xl:text-[40px]
+                                xl:leading-[46px]
+                                2xl:text-[52px]
                             "
                         >
                             Trusted by{" "}

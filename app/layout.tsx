@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import Script from "next/script";
 import FloatingWhatsApp from "@/components/Whatsapp";
 import "./globals.css";
@@ -8,17 +8,14 @@ import "./globals.css";
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+  display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  variable: "--font-space-grotesk",
-  weight: ["400", "500", "700"],
+  weight: ["400", "500"],
+  variable: "--font-inter-next",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -34,7 +31,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${manrope.variable} ${inter.variable}`}
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -44,7 +44,7 @@ export default function RootLayout({
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){
@@ -61,14 +61,7 @@ export default function RootLayout({
         />
       </head>
 
-      <body
-        className={`
-          ${manrope.variable}
-          ${inter.variable}
-          ${spaceGrotesk.variable}
-          antialiased
-        `}
-      >
+      <body className="font-sans antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -80,12 +73,11 @@ export default function RootLayout({
         </noscript>
 
         {children}
-
         <FloatingWhatsApp />
 
         <Script
           id="tawk-to-init"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           dangerouslySetInnerHTML={{
             __html: `
               window.Tawk_API = window.Tawk_API || {};
@@ -96,7 +88,7 @@ export default function RootLayout({
         <Script
           id="tawk-to-widget"
           src="https://embed.tawk.to/69fd7e65427c251c368c1e92/1jo33bfff"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
           charSet="UTF-8"
           crossOrigin="anonymous"
         />

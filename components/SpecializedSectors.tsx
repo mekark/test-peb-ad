@@ -130,7 +130,7 @@ export default function SpecializedSectors() {
                 <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/70" />
             </div>
 
-            <div className="relative z-10 mx-auto max-w-[1400px] px-5 sm:px-8 lg:px-12">
+            <div className="section-container relative z-10 lg:px-12">
                 <div className="grid grid-cols-1 gap-16 lg:grid-cols-[520px_1fr] lg:items-center">
                     {/* LEFT CONTENT */}
                     <div>
@@ -162,9 +162,15 @@ export default function SpecializedSectors() {
                 sm:text-[40px]
                 sm:leading-[46px]
 
-                lg:text-[52px]
-                lg:leading-[56px]
-                lg:tracking-[-1.2px]
+                lg:text-[40px]
+                lg:leading-[46px]
+
+                xl:text-[40px]
+                xl:leading-[46px]
+
+                2xl:text-[52px]
+                2xl:leading-[56px]
+                2xl:tracking-[-1.2px]
               "
                         >
                             Specialized PEB Solutions{" "}

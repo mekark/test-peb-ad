@@ -12,7 +12,7 @@ export default function ThankYouPage() {
           <div className="mt-6 text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-[#C4161C]">
             Enquiry Submitted
           </div>
-          <h1 className="mt-4 text-[2rem] font-semibold tracking-[-0.04em] text-[#09090B] sm:text-[2.5rem] md:text-[3rem]">
+          <h1 className="mt-4 text-[2rem] font-semibold tracking-[-0.04em] text-[#09090B] sm:text-[40px] lg:text-[40px] xl:text-[40px] 2xl:text-[3rem]">
             Thank you. Our team will contact you shortly.
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-[1rem] leading-8 text-[#52525B] sm:text-[1.05rem]">

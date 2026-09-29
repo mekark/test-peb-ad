@@ -29,7 +29,7 @@ const reasons = [
 export default function WhyMekark() {
   return (
     <section className="bg-[#E31E24] py-16 sm:py-20 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-[1500px] px-5 sm:px-8 lg:px-16">
+      <div className="section-container lg:px-16">
         <div
           className="
             grid
@@ -50,7 +50,7 @@ export default function WhyMekark() {
             {/* LABEL */}
             <p
               className="
-                font-space-grotesk
+                font-manrope
                 text-[12px]
                 font-bold
                 uppercase
@@ -76,9 +76,15 @@ export default function WhyMekark() {
                 sm:text-[40px]
                 sm:leading-[46px]
 
-                lg:text-[52px]
-                lg:leading-[60px]
-                lg:tracking-[-1.5px]
+                lg:text-[40px]
+                lg:leading-[46px]
+
+                xl:text-[40px]
+                xl:leading-[46px]
+
+                2xl:text-[52px]
+                2xl:leading-[60px]
+                2xl:tracking-[-1.5px]
               "
             >
               Your Project Deserves a Manufacturer,
@@ -273,7 +279,7 @@ export default function WhyMekark() {
                     }}
                     viewport={{ once: true }}
                     className="
-            font-space-grotesk
+            font-manrope
             text-[36px]
             font-bold
             leading-none

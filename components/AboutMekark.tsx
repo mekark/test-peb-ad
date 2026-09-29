@@ -35,6 +35,8 @@ export default function AboutMekark() {
           px-5
           sm:px-8
           lg:px-12
+          2xl:max-w-[1680px]
+          2xl:px-16
         "
       >
         {/* TOP CONTENT */}
@@ -76,14 +78,21 @@ export default function AboutMekark() {
               font-bold
               text-black
 
-              sm:text-[36px]
-              sm:leading-[42px]
+              sm:text-[40px]
+              sm:leading-[46px]
               sm:tracking-[-1.2px]
 
-              lg:text-[50px]
-              lg:leading-[61.2px]
-              lg:tracking-[-1.8px]
-              lg:whitespace-nowrap
+              lg:text-[40px]
+              lg:leading-[46px]
+              lg:tracking-[-1.2px]
+
+              xl:text-[40px]
+              xl:leading-[46px]
+
+              2xl:text-[50px]
+              2xl:leading-[61.2px]
+              2xl:tracking-[-1.8px]
+              2xl:whitespace-nowrap
             "
           >
             Trusted Industrial{" "}
@@ -167,6 +176,10 @@ export default function AboutMekark() {
 
                 sm:text-[18px]
                 sm:leading-[29.25px]
+                lg:text-[18px]
+                lg:leading-[30px]
+                2xl:text-[22px]
+                2xl:leading-[34px]
               "
             >
               Founded in 2008, Mekark is a leading Pre Engineered Building (PEB)
@@ -203,6 +216,10 @@ export default function AboutMekark() {
                 text-[#07050699]
 
                 sm:text-[16px]
+                lg:text-[16px]
+                lg:leading-[26px]
+                2xl:text-[20px]
+                2xl:leading-[32px]
               "
             >
               Every stage—from engineering and steel fabrication to site
@@ -270,19 +287,22 @@ export default function AboutMekark() {
                 <div>
                   <h3
                     className="
-                      font-space-grotesk
+                      font-manrope
                       text-[24px]
                       font-bold
                       uppercase
                       leading-[32px]
                       tracking-[-0.6px]
                       text-black
+                      lg:text-[24px]
+                      2xl:text-[30px]
+                      2xl:leading-[38px]
                     "
                   >
                     40,000 Tons
                   </h3>
 
-                  <p className="mt-1 text-[16px] text-[#5B5B5B]">
+                  <p className="mt-1 text-[16px] text-[#5B5B5B] lg:text-[16px] 2xl:text-[20px]">
                     Annual Capacity
                   </p>
                 </div>
@@ -337,19 +357,22 @@ export default function AboutMekark() {
                 <div>
                   <h3
                     className="
-                      font-space-grotesk
+                      font-manrope
                       text-[24px]
                       font-bold
                       uppercase
                       leading-[32px]
                       tracking-[-0.6px]
                       text-black
+                      lg:text-[24px]
+                      2xl:text-[30px]
+                      2xl:leading-[38px]
                     "
                   >
                     6 Lakh
                   </h3>
 
-                  <p className="mt-1 text-[16px] text-[#5B5B5B]">
+                  <p className="mt-1 text-[16px] text-[#5B5B5B] lg:text-[16px] 2xl:text-[20px]">
                     Sq.Ft Campus
                   </p>
                 </div>

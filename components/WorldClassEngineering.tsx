@@ -21,7 +21,7 @@ export default function WorldClassEngineering() {
       {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/50 z-0" />
 
-      <div className="relative z-10 mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+      <div className="section-container relative z-10">
         <div
           className="
             grid
@@ -43,11 +43,9 @@ export default function WorldClassEngineering() {
             {/* LABEL */}
             <p
               className="
-                font-space-grotesk
-                text-[12px]
+                font-manrope
+                type-eyebrow
                 font-bold
-                uppercase
-                tracking-[1px]
                 text-[#E50818]
               "
             >
@@ -65,12 +63,18 @@ export default function WorldClassEngineering() {
                 tracking-[-1px]
                 text-white
 
-                sm:text-[42px]
-                sm:leading-[48px]
+                sm:text-[40px]
+                sm:leading-[46px]
 
-                lg:text-[60px]
-                lg:leading-[66px]
-                lg:tracking-[-1.0px]
+                lg:text-[40px]
+                lg:leading-[46px]
+
+                xl:text-[40px]
+                xl:leading-[46px]
+
+                2xl:text-[60px]
+                2xl:leading-[66px]
+                2xl:tracking-[-1.0px]
               "
             >
               <span className="font-bold text-white">World Class</span>
@@ -86,9 +90,7 @@ export default function WorldClassEngineering() {
                 mt-7
                 max-w-[540px]
                 font-manrope
-                text-[16px]
-                font-normal
-                leading-[28px]
+                type-body
                 text-white/70
               "
             >
@@ -143,7 +145,7 @@ export default function WorldClassEngineering() {
                 >
                   <h3
                     className="
-          font-space-grotesk
+          font-manrope
           text-[34px]
           font-bold
           text-[#E50818]
@@ -185,7 +187,7 @@ export default function WorldClassEngineering() {
                 >
                   <h3
                     className="
-          font-space-grotesk
+          font-manrope
           text-[34px]
           font-bold
           text-[#E50818]
@@ -223,7 +225,7 @@ export default function WorldClassEngineering() {
                 >
                   <h3
                     className="
-          font-space-grotesk
+          font-manrope
           text-[34px]
           font-bold
           text-[#E50818]

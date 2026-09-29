@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUp } from "lucide-react";
 
 export default function ScrollToTop() {
@@ -18,51 +17,48 @@ export default function ScrollToTop() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  if (!visible) return null;
+
   return (
-    <AnimatePresence>
-      {visible && (
-        <motion.button
-          type="button"
-          aria-label="Scroll to top"
-          initial={{ opacity: 0, y: 20, scale: 0.85 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          exit={{ opacity: 0, y: 20, scale: 0.85 }}
-          transition={{ duration: 0.25 }}
-          onClick={() =>
-            window.scrollTo({ top: 0, behavior: "smooth" })
-          }
-          className="
-            fixed
-            bottom-[15.5rem]
-            right-4
-            z-[100]
+    <button
+      type="button"
+      aria-label="Scroll to top"
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="
+        fixed
+        bottom-[12.5rem]
+        right-3
+        z-[100]
 
-            flex
-            h-14
-            w-14
-            items-center
-            justify-center
+        flex
+        h-11
+        w-11
+        sm:h-14
+        sm:w-14
+        items-center
+        justify-center
 
-            rounded-full
+        rounded-full
 
-            bg-[#E40015]
-            text-white
+        bg-[#E40015]
+        text-white
 
-            shadow-[0_10px_32px_rgba(228,0,21,0.45)]
+        shadow-[0_20px_42px_-20px_rgba(228,0,21,0.72)]
 
-            transition-all
-            duration-300
+        transition-transform
+        duration-300
 
-            hover:bg-red-700
-            hover:scale-110
+        hover:bg-red-700
+        hover:scale-105
+        focus:outline-none
+        focus:ring-4
+        focus:ring-[#E40015]/30
 
-            sm:bottom-[16.5rem]
-            sm:right-6
-          "
-        >
-          <ArrowUp size={24} strokeWidth={2.5} />
-        </motion.button>
-      )}
-    </AnimatePresence>
+        sm:bottom-[15.5rem]
+        sm:right-6
+      "
+    >
+      <ArrowUp className="h-5 w-5 stroke-[2.5] sm:h-6 sm:w-6" />
+    </button>
   );
 }

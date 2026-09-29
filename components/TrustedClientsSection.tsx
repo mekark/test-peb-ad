@@ -29,7 +29,7 @@ export default function TrustedClientsSection() {
 
     overflow-hidden
   "
->      <div className="max-w-[1600px] mx-auto px-5 lg:px-10">
+>      <div className="mx-auto max-w-[1600px] px-5 lg:px-10 2xl:max-w-[1680px] 2xl:px-16">
         {/* TOP TEXT */}
         <p
           className="
@@ -39,6 +39,9 @@ export default function TrustedClientsSection() {
             text-[18px]
             font-bold
             mb-8
+            lg:text-[18px]
+            2xl:text-[22px]
+            2xl:tracking-[2.5px]
           "
         >
           Trusted Across India

@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { ArrowUpRight, Loader2, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Loader2, Phone } from "lucide-react";
 import { useState } from "react";
 import IndustryTypeSelect from "./IndustryTypeSelect";
 
@@ -13,71 +12,56 @@ const sqftOptions = [
   "10,000 - 20,000 Sq.ft",
   "20,000 - 30,000 Sq.ft",
   "30,000 - 50,000 Sq.ft",
-  "50,000+ Sq.ft",
-];
-
-const timelineOptions = [
-  "Immediately",
-  "Within 1 Month",
-  "Within 3 Months",
-  "Planning for Future",
-];
-
-const budgetOptions = [
-  "Below ₹50 Lakhs",
-  "₹50 Lakhs – ₹1 Crore",
-  "₹1 Crore – ₹5 Crores",
-  "Above ₹5 Crores",
+  " Above 50,000 Sq.ft",
 ];
 
 const WHATSAPP_NUMBER = "919790924754";
-
 const PHONE_NUMBER = "+919790924754";
+const WHATSAPP_MESSAGE =
+  "Hello Mekark, I would like to discuss about my PEB project.";
+
+const inputClassName = "type-form-input";
 
 export default function ProjectCTASection() {
   const [formData, setFormData] = useState({
     name: "",
-    company: "",
     phone: "",
     email: "",
     location: "",
     industry: "",
     sqft: "",
-    projectTimeline: "",
-    projectBudget: "",
     details: "",
   });
 
-  const [errors, setErrors] = useState<any>({});
+  const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+    WHATSAPP_MESSAGE,
+  )}`;
+
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement |
-      HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
     let value = e.target.value;
-  
+
     if (e.target.name === "phone") {
-      value = value
-        .replace(/\D/g, "")
-        .slice(0, 10);
+      value = value.replace(/\D/g, "").slice(0, 10);
     }
-  
-    setFormData({
-      ...formData,
+
+    setFormData((current) => ({
+      ...current,
       [e.target.name]: value,
-    });
-  
-    setErrors({
-      ...errors,
+    }));
+
+    setErrors((current) => ({
+      ...current,
       [e.target.name]: "",
-    });
+    }));
   };
 
   const validateForm = () => {
-    let newErrors: any = {};
+    const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
       newErrors.name = "Name is required";
@@ -97,14 +81,6 @@ export default function ProjectCTASection() {
       newErrors.sqft = "Select sq.ft requirement";
     }
 
-    if (!formData.projectTimeline) {
-      newErrors.projectTimeline = "Select project start timeline";
-    }
-
-    if (!formData.projectBudget) {
-      newErrors.projectBudget = "Select project budget";
-    }
-
     setErrors(newErrors);
 
     return Object.keys(newErrors).length === 0;
@@ -118,34 +94,28 @@ export default function ProjectCTASection() {
     setIsSubmitting(true);
 
     try {
-      const requestPayload = {
-        name: formData.name.trim(),
-        email: formData.email.trim(),
-        phone: formData.phone.trim(),
-        company: formData.company.trim(),
-        location: formData.location.trim(),
-        industry: formData.industry.trim(),
-        sqf: formData.sqft.trim(),
-        startTimeline: formData.projectTimeline.trim(),
-        budget: formData.projectBudget.trim(),
-        message: formData.details.trim(),
-        sourceUrl: window.location.href,
-        pageUrl: window.location.href,
-      };
-
-      console.log("REQUEST PAYLOAD:", requestPayload);
-
       const response = await fetch(FORM_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(requestPayload),
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          phone: formData.phone.trim(),
+          company: "",
+          location: formData.location.trim(),
+          industry: formData.industry.trim(),
+          sqf: formData.sqft.trim(),
+          startTimeline: "",
+          budget: "",
+          message: formData.details.trim(),
+          sourceUrl: window.location.href,
+          pageUrl: window.location.href,
+        }),
       });
 
       const payload = await response.json().catch(() => null);
-
-      console.log("RESPONSE:", payload);
 
       if (!response.ok) {
         throw new Error(payload?.message || "Unable to submit form.");
@@ -159,689 +129,244 @@ export default function ProjectCTASection() {
   };
 
   return (
-    <section className="relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        <Image
-          src="/Images/footerbg.webp"
-          alt="Industrial Background"
-          fill
-          priority
-          className="object-cover"
-        />
+    <section className="relative overflow-hidden bg-[#090909] xl:min-h-[760px]">
+      <Image
+        src="/Images/footerbg.webp"
+        alt="Construction site background"
+        fill
+        sizes="100vw"
+        className="object-cover opacity-30"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black to-[54%] lg:bg-[linear-gradient(-63deg,rgba(16,21,25,0)_0%,#080B0F_83%)]" />
+      <div className="absolute left-[180px] top-[-61px] h-[274px] w-[274px] rounded-full bg-[#E40015]/30 blur-[62px] lg:left-auto lg:right-[-213px] lg:top-[-267px] lg:h-[1035px] lg:w-[1035px]" />
 
-        <div className="absolute inset-0 bg-[#020817]/80" />
-
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(228,0,21,0.08)_0%,rgba(228,0,21,0.30)_100%)]" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-14 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_520px] gap-14 items-center">
-          {/* LEFT */}
-          <div className="max-w-[680px]">
-            {/* Badge */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 20,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.5,
-              }}
-              viewport={{ once: true }}
-              className="
-                inline-flex
-                items-center
-                justify-center
-                px-[14px]
-                py-[6px]
-                rounded-full
-                border
-                border-[#FCD5D0]
-                bg-[#FEEAE7]
-                mb-8
-              "
-            >
-              <span className="text-[13px] font-semibold leading-[19.5px] text-[#CC000A]">
-                Start Your Project
+      <div className="section-container-wide relative z-10 flex w-full max-w-[1483px] flex-col items-stretch gap-6 py-9 xl:grid xl:min-h-[760px] xl:grid-cols-[minmax(0,1fr)_minmax(500px,560px)] xl:items-center xl:gap-14 2xl:grid-cols-[minmax(0,837px)_600px] 2xl:max-w-[1680px] 2xl:py-[149px]">
+        <div className="w-full min-w-0 xl:max-w-[837px]">
+          <div className="flex w-full flex-col items-start gap-3.5 px-0 py-0 lg:gap-[25px] lg:overflow-hidden lg:rounded-[28px] xl:px-0 xl:py-0">
+            <div className="inline-flex w-fit shrink-0 items-center justify-center rounded-full border border-[#FCD5D0] bg-[#FEEAE7] px-[18px] py-1 lg:px-5 lg:py-[9px]">
+              <span className="font-manrope text-[10px] font-semibold leading-4 text-[#CC000A] lg:text-[16px] lg:leading-[26px] xl:text-[17px] 2xl:text-[17px] 3xl:text-[18px] 3xl:leading-[28px]">
+                Ready to Build?
               </span>
-            </motion.div>
-
-            {/* Heading */}
-            <motion.h2
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.7,
-              }}
-              viewport={{ once: true }}
-              className="
-                text-white
-                text-[28px]
-                sm:text-[42px]
-                lg:text-[56px]
-                leading-[1.1]
-                tracking-[-1px]
-                sm:tracking-[-2px]
-                font-bold
-                max-w-[720px]
-              "
-            >
-              Let’s build it{" "}
-              <span className="text-[#E40015]">
-                faster,
-                <br />
-                smarter, better.
-              </span>
-            </motion.h2>
-
-            {/* Description */}
-            <motion.p
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 0.8,
-              }}
-              viewport={{ once: true }}
-              className="
-                mt-8
-                text-white/70
-                text-[17px]
-                sm:text-[18px]
-                leading-[30px]
-                font-medium
-                max-w-[520px]
-              "
-            >
-              Share your requirement — our engineering team responds with a
-              layout, BOQ and timeline.
-            </motion.p>
-
-            {/* Cards */}
-            <div className="mt-10 space-y-5">
-              {/* CALL */}
-              <motion.a
-                href={`tel:${PHONE_NUMBER}`}
-                initial={{
-                  opacity: 0,
-                  x: -40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  duration: 0.7,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.02,
-                }}
-                className="
-                  group
-                  w-full
-                  max-w-[520px]
-                  min-h-[90px]
-                  rounded-[22px]
-                  border
-                  border-black/5
-                  bg-[#212121]
-                  px-5
-                  py-5
-                  flex
-                  items-center
-                  justify-between
-                  transition-all
-                  duration-300
-                "
-              >
-                <div className="flex items-center gap-4">
-                  <div
-                    className="
-                      w-12
-                      h-12
-                      rounded-[18px]
-                      bg-[#CC000A]
-                      flex
-                      items-center
-                      justify-center
-                    "
-                  >
-                    <Phone className="text-white" size={22} />
-                  </div>
-
-                  <div>
-                    <p
-                      className="
-                        text-[#A9A9A9]
-                        text-[12px]
-                        font-bold
-                        uppercase
-                        tracking-[0.6px]
-                      "
-                    >
-                      Call Now
-                    </p>
-
-                    <h4
-                      className="
-                        text-white
-                        text-[18px]
-                        font-bold
-                        leading-[24px]
-                        tracking-[-0.4px]
-                        mt-1
-                      "
-                    >
-                      +91 97909 24754
-                    </h4>
-                  </div>
-                </div>
-
-                <ArrowUpRight
-                  className="
-                    text-white/60
-                    group-hover:text-white
-                  "
-                  size={22}
-                />
-              </motion.a>
-
-              {/* WHATSAPP */}
-              <motion.a
-                href={`https://wa.me/${WHATSAPP_NUMBER}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                initial={{
-                  opacity: 0,
-                  x: -40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                transition={{
-                  duration: 0.8,
-                }}
-                viewport={{ once: true }}
-                whileHover={{
-                  scale: 1.02,
-                }}
-                className="
-                  group
-                  w-full
-                  max-w-[520px]
-                  min-h-[90px]
-                  rounded-[22px]
-                  border
-                  border-black/5
-                  bg-[#212121]
-                  px-5
-                  py-5
-                  flex
-                  items-center
-                  justify-between
-                  transition-all
-                  duration-300
-                "
-              >
-                <div className="flex items-center gap-4">
-                  <div
-                    className="
-                      w-12
-                      h-12
-                      rounded-[18px]
-                      bg-[#CC000A]
-                      flex
-                      items-center
-                      justify-center
-                    "
-                  >
-                    <Image
-                      src="/Images/ws.webp"
-                      alt="WhatsApp"
-                      width={26}
-                      height={26}
-                    />
-                  </div>
-
-                  <h4
-                    className="
-                      text-white
-                      text-[18px]
-                      font-bold
-                    "
-                  >
-                    WhatsApp Us Now
-                  </h4>
-                </div>
-
-                <ArrowUpRight
-                  className="
-                    text-white/60
-                    group-hover:text-white
-                  "
-                  size={22}
-                />
-              </motion.a>
             </div>
 
-            {/* ADDRESS */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              viewport={{ once: true }}
-              className="
-                mt-10
-                flex
-                items-start
-                gap-4
-                max-w-[560px]
-              "
-            >
-              <MapPin className="text-[#E40015] mt-1" size={30} />
+            <div className="flex w-full flex-col gap-3">
+              <h2 className="w-full font-manrope text-[28px] font-extrabold leading-[34px] text-white sm:text-[40px] sm:leading-[46px] lg:text-[40px] lg:leading-[46px] xl:text-[48px] xl:leading-[52px] 2xl:text-[52px] 2xl:leading-[58px] 3xl:text-[79.467px] 3xl:leading-[81.6px]">
+                Start Your PEB Project{" "}
+                <span className="text-[#CC000A]">Today</span>
+              </h2>
 
-              <p
-                className="
-                  text-white
-                  text-[16px]
-                  leading-[24px]
-                  font-medium
-                "
-              >
-                Mekark Polyhouse Tower, 5th Floor, Anna Salai, Little Mount,
-                Guindy, Chennai - 600032
+              <p className="w-full font-manrope text-[14px] font-medium leading-normal text-white/65 lg:max-w-[760px] lg:text-[20px] lg:leading-[30px] xl:text-[21px] xl:leading-[32px] 2xl:text-[22px] 2xl:leading-[34px] 3xl:text-[24px] 3xl:leading-[37.333px]">
+                Share your requirement — our engineering team responds with a
+                layout, BOQ and timeline. Response within 2 hours.
               </p>
-            </motion.div>
+            </div>
           </div>
 
-          {/* RIGHT FORM */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 60,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.9,
-            }}
-            viewport={{ once: true }}
-            className="
-              bg-[#F7F7F7]
-              rounded-[30px]
-              p-6
-              sm:p-8
-              lg:p-10
-              shadow-[0_20px_80px_rgba(0,0,0,0.25)]
-            "
-          >
-            {/* Heading */}
-            <div className="text-center">
-              <h3
-                className="
-                  text-[#121212]
-                  text-[28px]
-                  font-bold
-                "
-              >
-                Request Your Project Blueprint
-              </h3>
-
-              <p
-                className="
-                  text-[#8B8B8B]
-                  text-[14px]
-                  mt-2
-                "
-              >
-                Get a custom layout, cost range & 150-day timeline
-              </p>
-            </div>
-
-            {/* FORM */}
-            <form
-              onSubmit={handleSubmit}
-              id="quote-form"
-              className="mt-8 space-y-4"
+          <div className="mt-0 flex w-full flex-col gap-3 lg:mt-10 lg:max-w-[693px] lg:gap-5 2xl:mt-[55px] 2xl:gap-[21px]">
+            <a
+              href={`tel:${PHONE_NUMBER}`}
+              className="group flex w-full items-center justify-between rounded-[20px] border border-black/5 bg-[#212121] px-4 py-2.5 transition-transform duration-300 hover:scale-[1.01] lg:min-h-[96px] lg:rounded-[24px] lg:px-5 2xl:min-h-[120px] 2xl:rounded-[29.333px] 2xl:px-[27px]"
             >
-              {/* NAME & COMPANY */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    placeholder="Enter Your Full Name*"
-                    className="
-                    w-full
-                    h-[54px]
-                    rounded-[10px]
-                    border
-                    border-[#E5E5E5]
-                    bg-[#ECECEC]
-                    px-4
-                    text-[15px]
-                    font-medium
-                    text-black
-                    placeholder:text-black/55
-                    caret-black
-                    outline-none
-                    focus:border-[#D90916]
-                    focus:bg-white
-                    transition-all
-                    duration-300
-                  "
+              <div className="flex items-center gap-4 lg:gap-[21px]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#CC000A] lg:h-16 lg:w-16 lg:rounded-[24px]">
+                  <Phone className="h-6 w-6 text-white lg:h-[27px] lg:w-[27px]" />
+                </span>
+                <span>
+                  <span className="block font-manrope text-[10px] font-bold uppercase leading-4 text-[#A9A9A9] lg:text-[16px] lg:leading-[21.333px] xl:text-[17px] 2xl:text-[17px] 3xl:text-[18px]">
+                    Call Now
+                  </span>
+                  <span className="mt-0.5 block font-manrope text-[14px] font-extrabold leading-6 text-white lg:mt-1 lg:text-[21.333px] lg:leading-8 xl:text-[23px] 2xl:text-[24px] 3xl:text-[26px]">
+                    +91 97909 24754
+                  </span>
+                </span>
+              </div>
+              <ArrowUpRight className="h-6 w-6 shrink-0 text-white/55 transition-colors group-hover:text-white lg:h-[27px] lg:w-[27px]" />
+            </a>
+
+            <a
+              href={whatsappHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex w-full items-center justify-between rounded-[20px] border border-black/5 bg-[#212121] px-4 py-2.5 transition-transform duration-300 hover:scale-[1.01] lg:min-h-[96px] lg:rounded-[24px] lg:px-5 2xl:min-h-[120px] 2xl:rounded-[29.333px] 2xl:px-[27px]"
+            >
+              <div className="flex items-center gap-4 lg:gap-[21px]">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#CC000A] lg:h-16 lg:w-16 lg:rounded-[24px]">
+                  <Image
+                    src="/Images/ws.webp"
+                    alt="WhatsApp"
+                    width={30}
+                    height={30}
+                    className="h-[30px] w-[30px] lg:h-[39px] lg:w-[39px]"
                   />
+                </span>
+                <span className="font-manrope text-[14px] font-bold leading-6 text-white lg:text-[26px] lg:leading-[27.46px] xl:text-[27px] 2xl:text-[28px] 3xl:text-[30px]">
+                  WhatsApp Us Now
+                </span>
+              </div>
+              <ArrowUpRight className="h-6 w-6 shrink-0 text-white/55 transition-colors group-hover:text-white lg:h-[27px] lg:w-[27px]" />
+            </a>
+          </div>
+        </div>
 
-                  {errors.name && (
-                    <p className="text-red-500 text-sm mt-2">{errors.name}</p>
-                  )}
-                </div>
+        <div className="w-full min-w-0 rounded-[24px] border border-[#E2E2E2] bg-white p-5 shadow-[0_24px_40px_rgba(0,0,0,0.06)] lg:rounded-[28.998px] lg:px-7 lg:py-8 xl:px-9 2xl:px-[46px] 2xl:py-[42px]">
+          <div className="text-center">
+            <h3 className="font-manrope text-[18px] font-extrabold text-[#080808] lg:text-[21.8px] lg:tracking-[-0.5px] xl:text-[23px] 2xl:text-[24px] 3xl:text-[28px]">
+              Request Your Project Blueprint
+            </h3>
+            <p className="mt-2 font-manrope text-[12px] font-medium text-[#9A9A9A] lg:mt-3 lg:text-[13px] xl:text-[14px] 2xl:text-[14px] 3xl:text-[16px]">
+              Get a custom layout, cost range & 150-day* timeline
+            </p>
+          </div>
 
+          <form
+            id="quote-form"
+            onSubmit={handleSubmit}
+            className="mt-4 space-y-4 lg:mt-[21px] lg:space-y-3"
+          >
+            <div className="grid grid-cols-1 gap-x-8 gap-y-4 lg:grid-cols-2 lg:gap-y-3">
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Full Name*
+                </span>
                 <input
                   type="text"
-                  name="company"
-                  value={formData.company}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
-                  placeholder="Enter Company Name"
-                  className="
-                  w-full
-                  h-[54px]
-                  rounded-[10px]
-                  border
-                  border-[#E5E5E5]
-                  bg-[#ECECEC]
-                  px-4
-                  text-[15px]
-                  font-medium
-                  text-black
-                  placeholder:text-black/55
-                  caret-black
-                  outline-none
-                  focus:border-[#D90916]
-                  focus:bg-white
-                  transition-all
-                  duration-300
-                "
+                  placeholder="Your name"
+                  className={inputClassName}
                 />
-              </div>
+                {errors.name && (
+                  <span className="mt-1 block text-xs text-red-500">
+                    {errors.name}
+                  </span>
+                )}
+              </label>
 
-              {/* GRID */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* PHONE */}
-                <div>
-                  <input
-                    type="text"
-                    name="phone"
-                    value={formData.phone}
-                    maxLength={10}
-                    onChange={handleChange}
-                    placeholder="Enter Mobile Number*"
-                    className="
-                      w-full
-                      h-[54px]
-                      rounded-[10px]
-                      border
-                      border-[#E5E5E5]
-                      bg-[#ECECEC]
-                      px-4
-                      text-[15px]
-                      font-medium
-                      text-black
-                      placeholder:text-black/55
-                      caret-black
-                      outline-none
-                      focus:border-[#D90916]
-                      focus:bg-white
-                      transition-all
-                      duration-300
-                    "
-                  />
-
-                  {errors.phone && (
-                    <p className="text-red-500 text-sm mt-2">{errors.phone}</p>
-                  )}
-                </div>
-
-                {/* EMAIL */}
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="Enter Email Address"
-                  className="
-                    w-full
-                    h-[54px]
-                    rounded-[10px]
-                    border
-                    border-[#E5E5E5]
-                    bg-[#ECECEC]
-                    px-4
-                    text-[15px]
-                    font-medium
-                    text-black
-                    placeholder:text-black/55
-                    caret-black
-                    outline-none
-                    focus:border-[#D90916]
-                    focus:bg-white
-                    transition-all
-                    duration-300
-                  "
-                />
-
-                {/* INDUSTRY */}
-                <div>
-                  <IndustryTypeSelect
-                    value={formData.industry}
-                    onChange={(value) =>
-                      handleChange({
-                        target: { name: "industry", value },
-                      } as React.ChangeEvent<HTMLSelectElement>)
-                    }
-                  />
-
-                  {errors.industry && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.industry}
-                    </p>
-                  )}
-                </div>
-
-                {/* SQFT */}
-                <div>
-                  <IndustryTypeSelect
-                    value={formData.sqft}
-                    options={sqftOptions}
-                    placeholder="Select Sq.ft Requirement*"
-                    onChange={(value) =>
-                      handleChange({
-                        target: { name: "sqft", value },
-                      } as React.ChangeEvent<HTMLSelectElement>)
-                    }
-                  />
-
-                  {errors.sqft && (
-                    <p className="text-red-500 text-sm mt-2">{errors.sqft}</p>
-                  )}
-                </div>
-
-                {/* PROJECT TIMELINE */}
-                <div>
-                  <IndustryTypeSelect
-                    value={formData.projectTimeline}
-                    options={timelineOptions}
-                    placeholder="Project Start Timeline*"
-                    onChange={(value) =>
-                      handleChange({
-                        target: { name: "projectTimeline", value },
-                      } as React.ChangeEvent<HTMLSelectElement>)
-                    }
-                  />
-
-                  {errors.projectTimeline && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.projectTimeline}
-                    </p>
-                  )}
-                </div>
-
-                {/* PROJECT BUDGET */}
-                <div>
-                  <IndustryTypeSelect
-                    value={formData.projectBudget}
-                    options={budgetOptions}
-                    placeholder="Project Budget*"
-                    onChange={(value) =>
-                      handleChange({
-                        target: { name: "projectBudget", value },
-                      } as React.ChangeEvent<HTMLSelectElement>)
-                    }
-                  />
-
-                  {errors.projectBudget && (
-                    <p className="text-red-500 text-sm mt-2">
-                      {errors.projectBudget}
-                    </p>
-                  )}
-                </div>
-
-                {/* LOCATION */}
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Project Location
+                </span>
                 <input
                   type="text"
                   name="location"
                   value={formData.location}
                   onChange={handleChange}
-                  placeholder="Enter Project Location"
-                  className="
-                    w-full
-                    h-[54px]
-                    rounded-[10px]
-                    border
-                    border-[#E5E5E5]
-                    bg-[#ECECEC]
-                    px-4
-                    text-[15px]
-                    font-medium
-                    text-black
-                    placeholder:text-black/55
-                    caret-black
-                    outline-none
-                    focus:border-[#D90916]
-                    focus:bg-white
-                    transition-all
-                    duration-300
-                  "
+                  placeholder="Enter project location"
+                  className={inputClassName}
                 />
+              </label>
 
-                {/* DETAILS */}
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Mobile Number*
+                </span>
+                <input
+                  type="text"
+                  name="phone"
+                  value={formData.phone}
+                  maxLength={10}
+                  onChange={handleChange}
+                  placeholder="+91 98765 43210"
+                  className={inputClassName}
+                />
+                {errors.phone && (
+                  <span className="mt-1 block text-xs text-red-500">
+                    {errors.phone}
+                  </span>
+                )}
+              </label>
+
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Email Address
+                </span>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  placeholder="abcd@gmail.com"
+                  className={inputClassName}
+                />
+              </label>
+
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Industry Type*
+                </span>
+                <IndustryTypeSelect
+                  value={formData.industry}
+                  variant="figma"
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "industry", value },
+                    } as React.ChangeEvent<HTMLSelectElement>)
+                  }
+                />
+                {errors.industry && (
+                  <span className="mt-1 block text-xs text-red-500">
+                    {errors.industry}
+                  </span>
+                )}
+              </label>
+
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Project Sq. Ft*
+                </span>
+                <IndustryTypeSelect
+                  value={formData.sqft}
+                  options={sqftOptions}
+                  placeholder="Select Sq. Ft Requirement"
+                  variant="figma"
+                  onChange={(value) =>
+                    handleChange({
+                      target: { name: "sqft", value },
+                    } as React.ChangeEvent<HTMLSelectElement>)
+                  }
+                />
+                {errors.sqft && (
+                  <span className="mt-1 block text-xs text-red-500">
+                    {errors.sqft}
+                  </span>
+                )}
+              </label>
+
+              <label className="block">
+                <span className="type-form-label max-lg:sr-only tracking-[0.3px]">
+                  Requirement Details
+                </span>
                 <input
                   type="text"
                   name="details"
                   value={formData.details}
                   onChange={handleChange}
-                  placeholder="Enter Requirement Details"
-                  className="
-                    w-full
-                    h-[54px]
-                    rounded-[10px]
-                    border
-                    border-[#E5E5E5]
-                    bg-[#ECECEC]
-                    px-4
-                    text-[15px]
-                    font-medium
-                    text-black
-                    placeholder:text-black/55
-                    caret-black
-                    outline-none
-                    focus:border-[#D90916]
-                    focus:bg-white
-                    transition-all
-                    duration-300
-                  "
+                  placeholder="Enter requirement details"
+                  className={inputClassName}
                 />
-              </div>
+              </label>
+            </div>
 
-              {/* BUTTON */}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="
-                  mt-3
-                  w-full
-                  h-[58px]
-                  rounded-[12px]
-                  bg-[#D90916]
-                  text-white
-                  text-[16px]
-                  font-bold
-                  shadow-[0_10px_30px_rgba(217,9,22,0.35)]
-                  transition-all
-                  duration-300
-                  hover:scale-[1.01]
-                  disabled:cursor-not-allowed
-                  disabled:opacity-70
-                  disabled:hover:scale-100
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                "
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="h-5 w-5 animate-spin" />
-                    Submitting...
-                  </>
-                ) : (
-                  "Get My Free Quote →"
-                )}
-              </button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="flex w-full items-center justify-center gap-2 rounded-[8px] bg-[#C4161C] px-9 py-3.5 font-manrope text-[14px] font-semibold text-[#F5F5F5] shadow-[0_8px_16px_rgba(196,22,28,0.3)] transition-colors duration-300 hover:bg-[#A91217] disabled:cursor-not-allowed disabled:opacity-70 lg:h-[58px] lg:py-[18px] lg:text-[16px] lg:font-extrabold xl:text-[17px] 2xl:h-[60px] 2xl:text-[17px] 3xl:h-[64px] 3xl:text-[18px]"
+            >
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="h-5 w-5 animate-spin" />
+                  Submitting...
+                </>
+              ) : (
+                "Get My Free Quote →"
+              )}
+            </button>
 
-              <p
-                className="
-                  text-center
-                  text-[#8B8B8B]
-                  text-[12px]
-                  mt-4
-                "
-              >
-                100% Transparent Consultation with single point project support
-              </p>
-            </form>
-          </motion.div>
+            <p className="text-center font-manrope text-[12px] font-medium text-[#5A5A5A] lg:text-[10.667px] lg:tracking-[0.3px] 2xl:text-[10.667px] 3xl:text-[14px]">
+              100% Transparent Consultation with single point project support
+            </p>
+          </form>
         </div>
       </div>
     </section>

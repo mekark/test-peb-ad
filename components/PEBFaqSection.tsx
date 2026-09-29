@@ -1,452 +1,179 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "framer-motion";
 import { Plus, X } from "lucide-react";
 
 const faqData = [
   {
-    id: "01",
-    question:
-      "What are PEB steel structure contractors and what advantages do PEB buildings offer?",
+    question: "Why choose MEKARK as a PEB contractor?",
     answer:
-      "PEB steel structure contractors design, manufacture, and erect engineered steel building systems for industrial applications. PEB buildings offer faster construction, large clear spans, structural efficiency, and flexibility for future expansion.",
+      "As a PEB building contractor, MEKARK manages the execution of projects of pre-engineered steel building contractor, including structural coordination with PEB steel structure contractor, erection, installation and site activities. MEKARK combines engineering, in-house manufacturing and on-site execution to provide PEB steel building contractor with solutions for PEB industrial and commercial building projects.",
   },
   {
-    id: "02",
-    question: "What should I look for in pre engineered building manufacturers?",
+    question: "How to choose the right turnkey PEB contractor?",
     answer:
-      "Choose pre engineered building manufacturers with strong engineering capabilities, advanced fabrication facilities, quality systems, and proven industrial experience. Mekark integrates engineering and in-house manufacturing to maintain better control over structural quality.",
+      "While choosing turnkey PEB contractor & turnkey PEB constructor, consider engineering capability, manufacturing infrastructure, quality systems, pre-fabricated building constructor erection capability. MEKARK provides end to end responsibility with a single pre-fabricated building constructor team for delivering wide range of custom steel buildings, pre manufactured steel buildings & steel fabricated buildings.",
   },
   {
-    id: "03",
-    question:
-      "How do I choose the right pre engineered building company for my project?",
+    question: "What types of projects can PEB contractors handle?",
     answer:
-      "A reliable pre engineered building company should have experienced engineers, manufacturing capabilities, quality control, and project execution expertise. Mekark provides an integrated approach from structural design and fabrication to erection and completion.",
+      "PEB contractors and PEB steel building contractors can execute commercial steel building and engineered steel building projects such as factories, warehouses, logistics facilities, manufacturing units, plants, cold storages, PEB industrial and commercial buildings. MEKARK undertakes PEB construction company projects for a wide range of PEB industrial and commercial building applications for pre-fabricated building constructors & pre engineered building contractors.",
   },
   {
-    id: "04",
-    question:
-      "What is the difference between PEB contractors and a PEB building manufacturer?",
+    question: "What does a PEB construction company provide?",
     answer:
-      "PEB contractors typically manage site execution and erection, while a PEB building manufacturer focuses on engineering and fabrication of structural components. Mekark combines manufacturing and project execution to provide an integrated PEB solution.",
+      "A PEB construction company and PEB construction contractor provides engineering and pre-fabricated building constructor services required to deliver pre-engineered steel buildings. Depending on the project scope, this can include PEB steel structure design, PEB manufacturing, procurement, quality inspection, transportation, erection and final handover of PEB construction contractor projects.",
   },
   {
-    id: "05",
     question:
-      "Why choose a turnkey industrial construction company for an industrial project?",
+      "Why PEB construction company for industrial and commercial buildings?",
     answer:
-      "A turnkey industrial construction company manages multiple project requirements through a single coordinated execution process. This can include engineering, procurement, civil construction, PEB, MEP, utilities, and project handover.",
+      "A specialized PEB construction contractor company can integrate PEB Steel structure engineering, prefabricated steel building components and efficient site erection into one coordinated pre engineered building system. PEB construction is well suited for PEB industrial and commercial building projects requiring large, efficient building spaces.",
   },
   {
-    id: "06",
-    question:
-      "What services do industrial building contractors and an EPC contractor provide?",
+    question: "Can a PEB construction company customize tailor-made?",
     answer:
-      "Industrial building contractors can handle structural and civil construction for factories, warehouses, and industrial facilities. An EPC contractor can additionally coordinate engineering, procurement, construction, MEP, utilities, and complete project execution.",
+      "Yes. A PEB construction company can engineer the pre-engineered building according to project requirements such as steel fabricated building dimensions, clear span, height, loading requirements, functional use and future expansion plans. MEKARK begins by understanding the client's requirements and site conditions before PEB steel structure design and peb manufacturing.",
   },
   {
-    id: "07",
-    question:
-      "Can PEB contractors in Chennai handle large industrial steel building construction projects?",
+    question: "What is a PEB manufacturer?",
     answer:
-      "Yes. Experienced PEB contractors in Chennai can design and execute large industrial steel building construction projects based on span, height, loading, crane requirements, wind conditions, and site-specific structural requirements.",
+      "A PEB manufacturer or pre engineered steel building manufacturer manufactures the pre-engineered steel building components required for a pre-engineered steel building contractor company. The process typically involves approved structural designs, precision steel fabrication, quality checks before the components are transported to the turnkey industrial construction project site for erection.",
   },
   {
-    id: "08",
-    question:
-      "Are PEB manufacturers in Chennai suitable for customized industrial buildings?",
+    question: "What is the difference — PEB manufacturer vs PEB contractor?",
     answer:
-      "Yes. PEB manufacturers in Chennai can engineer customized structures for manufacturing plants, warehouses, logistics facilities, and other industrial applications. Building dimensions, equipment loads, mezzanines, openings, and future expansion can be incorporated into the design.",
+      "A PEB manufacturer primarily manufactures the pre-engineered steel building components, while a PEB contractor manages pre engineered steel building project execution, including erection, installation and site activities. MEKARK combines both capabilities with in-house PEB steel structure manufacturing, engineering and turnkey PEB constructor services for end-to-end custom steel building project execution.",
   },
   {
-    id: "09",
-    question:
-      "Can PEB manufacturers in Coimbatore and PEB contractors in Coimbatore handle industrial projects?",
+    question: "Why a PEB manufacturer with in-house manufacturing capability?",
     answer:
-      "Yes. PEB manufacturers in Coimbatore and PEB contractors in Coimbatore can deliver engineered steel solutions for factories, warehouses, and large-span industrial facilities, subject to the project's design, site, and execution requirements.",
+      "PEB manufacturer with in-house manufacturing capability can improve coordination between engineering, fabrication, quality control and project execution. MEKARK has its own manufacturing facility and integrates PEB manufacturing with engineering and on-site erection for PEB industrial and commercial building projects.",
   },
   {
-    id: "10",
-    question:
-      "Why choose Mekark as an industrial construction company and industrial project contractor?",
+    question: "What is turnkey PEB construction?",
     answer:
-      "Mekark combines engineering expertise, in-house manufacturing, PEB construction, civil works, and integrated project execution. As an industrial construction company and industrial project contractor, Mekark provides a coordinated approach from design and procurement through construction and handover.",
+      "Turnkey PEB construction provides multiple stages to a pre-engineered steel building contractor's project with a coordinated project delivery approach. It covers requirement analysis, structural design, procurement, PEB manufacturing, quality control, installation, and final handover to a wide range of industrial steel building contractors, PEB warehouse contractors, PEB factory contractors, and industrial building contractors.",
+  },
+  {
+    question: "What are the advantages of choosing a turnkey PEB contractor?",
+    answer:
+      "A turnkey industrial PEB contractor or turnkey steel building contractor provides a single point of responsibility, reduces coordination gaps between pre engineered steel building manufacturer & site execution, gives the customer one pre engineered building company to work with from pre engineered industrial building project planning through erection and handover of pre engineered commercial building.",
+  },
+  {
+    question: "Does MEKARK provide end-to-end turnkey PEB construction?",
+    answer:
+      "Yes. MEKARK provides turnkey PEB contractor and turnkey industrial construction services for pre engineered commercial buildings, supported by in-house PEB manufacturing and on-site erection capabilities. MEKARK manages the PEB EPC contractor projects with end-to-end process for turnkey industrial constructions and pre engineered commercial buildings.",
   },
 ];
 
 export default function PEBFaqSection() {
-  const [activeIndex, setActiveIndex] =
-    useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const faqId = useId();
 
   const toggleFAQ = (index: number) => {
-    setActiveIndex(
-      activeIndex === index ? -1 : index
-    );
+    setActiveIndex((current) => (current === index ? -1 : index));
   };
 
   return (
-    <section className="w-full bg-[#F4F4F4] overflow-hidden py-14 sm:py-16 lg:py-24">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-14">
-        <div
-          className="
-            grid
-            grid-cols-1
-
-            lg:grid-cols-[440px_1fr]
-            xl:grid-cols-[500px_1fr]
-
-            gap-10
-            sm:gap-12
-            lg:gap-16
-            xl:gap-20
-
-            items-start
-          "
-        >
-          {/* LEFT CONTENT */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: -60,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.8,
-            }}
-            viewport={{ once: true }}
-            className="relative"
-          >
-            {/* Badge */}
-            <div
-              className="
-                inline-flex
-                items-center
-                justify-center
-
-                px-[14px]
-                py-[6px]
-
-                rounded-full
-
-                border
-                border-[#FCD5D0]
-
-                bg-[#FEEAE7]
-
-                mb-6
-              "
-            >
-              <span className="text-[13px] font-semibold leading-[19.5px] text-[#CC000A]">
+    <section id="faq" className="relative z-10 overflow-hidden bg-[#F9F6F7] py-8 lg:overflow-clip lg:py-16 3xl:py-[95px]">
+      <div className="section-container-wide grid h-full min-h-0 w-full max-w-[1706px] grid-cols-1 items-start gap-6 lg:max-w-[1920px] lg:grid-cols-[minmax(0,692fr)_minmax(0,912fr)] lg:items-start lg:gap-12 xl:gap-16 2xl:max-w-[1920px] 2xl:gap-20 3xl:max-w-[1920px] 3xl:gap-[101.333px] 3xl:px-[106.667px]">
+        <div className="relative min-h-0 lg:sticky lg:top-24 lg:self-start 2xl:top-[95px]">
+          <div className="flex flex-col items-start gap-3 px-5 py-1.5 lg:gap-[25.467px] lg:px-0 lg:py-0">
+            <div className="inline-flex items-center rounded-full border border-[#FCD5D0] bg-[#FEEAE7] px-[18.67px] py-2 lg:border-[1.333px] lg:px-5 lg:py-[9.333px]">
+              <span className="font-manrope text-[14px] font-semibold leading-[22px] text-[#CC000A] lg:text-[16px] lg:leading-[26px]">
                 FAQ
               </span>
             </div>
 
-            {/* Heading */}
-            <h2
-              className="
-                text-[28px]
-                sm:text-[40px]
-                lg:text-[56px]
-
-                leading-[1.05]
-                sm:leading-[0.95]
-
-                font-bold
-
-                tracking-[-1px]
-                sm:tracking-[-2px]
-
-                text-black
-
-                max-w-[520px]
-              "
-            >
-              Frequently asked{" "}
-              <span className="text-[#CC000A]">
-                questions.
-              </span>
+            <h2 className="font-manrope text-[28px] font-bold leading-8 text-[#070506] lg:text-[40px] lg:leading-[50px] xl:text-[48px] xl:leading-[60px] 2xl:text-[56px] 2xl:leading-[70px] 3xl:text-[66px] 3xl:leading-[81.6px]">
+              Frequently asked
+              <span className="block text-[#CC000A]">questions.</span>
             </h2>
 
-            {/* Description */}
-            <p
-              className="
-                mt-6
-
-                text-[16px]
-                sm:text-[18px]
-
-                leading-[28px]
-
-                font-medium
-
-                text-[#070506A6]
-
-                max-w-[420px]
-              "
-            >
-              Everything you need to know
-              about PEB construction and our
-              manufacturing capability.
+            <p className="font-manrope text-[16px] font-medium leading-[23px] text-[#64748B] lg:text-[20px] lg:leading-[30px] xl:text-[21px] 2xl:text-[22px] 3xl:text-[24px] 3xl:leading-[37.333px]">
+              Everything you need to know about PEB
+              <span className="block">
+                construction and our manufacturing capability.
+              </span>
             </p>
+          </div>
 
-            {/* FAQ IMAGE - DESKTOP ONLY */}
-            <motion.div
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              transition={{
-                duration: 1,
-              }}
-              viewport={{ once: true }}
-              className="
-                relative
+          <div className="relative mt-0 h-[220px] w-full overflow-hidden lg:mt-10 lg:h-auto lg:overflow-visible">
+            <Image
+              src="/Images/faq.webp"
+              alt="Industrial steel building"
+              width={947}
+              height={631}
+              className="h-full w-full object-cover lg:hidden"
+            />
+            <Image
+              src="/Images/faq-desktop.png"
+              alt="Multi-storey industrial steel building"
+              width={946}
+              height={631}
+              sizes="(min-width: 1920px) 946px, 50vw"
+              className="relative hidden lg:left-[-20.617%] lg:block lg:h-auto lg:w-[136.705%] lg:max-w-none lg:-scale-x-100"
+            />
+          </div>
+        </div>
 
-                hidden
-                lg:flex
+        <div className="w-full min-h-0 px-5 lg:px-0 3xl:pt-[15.333px]">
+          <div className="flex w-full flex-col gap-3 pb-8 lg:gap-0 lg:pb-0">
+            {faqData.map((faq, index) => {
+              const isOpen = activeIndex === index;
+              const number = `${index + 1}.`;
+              const questionTone = isOpen
+                ? "text-[#C4161C]"
+                : "text-[#080808] group-hover:text-[#C4161C]";
 
-                mt-24
-                xl:mt-28
-
-                w-full
-
-                justify-start
-
-                lg:pl-2
-              "
-            >
-              <div
-                className="
-                  relative
-
-                  w-full
-
-                  max-w-[580px]
-                  xl:max-w-[620px]
-                "
-              >
-                <Image
-                  src="/Images/faq.webp"
-                  alt="Industrial Building"
-                  width={620}
-                  height={920}
-                  priority
-                  className="
-                    w-full
-                    h-auto
-
-                    object-contain
-
-                    scale-[1.66]
-
-                    origin-center
-
-                    drop-shadow-[0_35px_70px_rgba(0,0,0,0.16)]
-                  "
-                />
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* RIGHT FAQ */}
-          <motion.div
-            initial={{
-              opacity: 0,
-              x: 60,
-            }}
-            whileInView={{
-              opacity: 1,
-              x: 0,
-            }}
-            transition={{
-              duration: 0.9,
-            }}
-            viewport={{ once: true }}
-            className="w-full"
-          >
-            <div className="border-t border-[#DDDDDD]">
-              {faqData.map((faq, index) => {
-                const isOpen =
-                  activeIndex === index;
-
-                return (
-                  <motion.div
-                    key={faq.id}
-                    initial={{
-                      opacity: 0,
-                      y: 30,
-                    }}
-                    whileInView={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      duration: 0.5,
-                      delay:
-                        index * 0.08,
-                    }}
-                    viewport={{ once: true }}
-                    className="border-b border-[#DDDDDD]"
+              return (
+                <div
+                  key={faq.question}
+                  className={`border-b border-[#E2E2E2] lg:border-b-[1.333px] lg:pb-[33.333px] ${
+                    index > 0 ? "lg:pt-8" : ""
+                  } ${isOpen ? "flex flex-col gap-2.5 lg:gap-[18.667px]" : ""}`}
+                >
+                  <button
+                    type="button"
+                    onClick={() => toggleFAQ(index)}
+                    id={`${faqId}-question-${index}`}
+                    aria-expanded={isOpen}
+                    aria-controls={`${faqId}-answer-${index}`}
+                    className="group flex w-full items-center justify-between gap-4 py-3 text-left lg:items-center lg:gap-6 lg:py-0"
                   >
-                    <button
-                      onClick={() =>
-                        toggleFAQ(index)
-                      }
-                      className="
-                        w-full
-
-                        flex
-                        items-start
-
-                        gap-4
-
-                        py-6
-
-                        text-left
-
-                        group
-                      "
+                    <h3
+                      className={`flex min-w-0 flex-1 items-start gap-0 font-manrope text-[16px] font-medium leading-6 transition-colors duration-300 lg:gap-2 lg:pr-4 lg:text-[18px] lg:leading-[26px] xl:text-[20px] xl:leading-[28px] 3xl:text-[24px] 3xl:leading-8 ${questionTone}`}
                     >
-                      {/* Number */}
-                      <span
-                        className="
-                          text-[14px]
-                          sm:text-[15px]
+                      <span className="shrink-0 lg:min-w-[28px]">{number}</span>
+                      <span className="min-w-0">{faq.question}</span>
+                    </h3>
 
-                          font-semibold
+                    <span
+                      className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-[18.667px] transition-colors duration-300 lg:h-[37.333px] lg:w-[37.333px] ${
+                        isOpen
+                          ? "bg-[#C4161C] text-[#F5F5F5]"
+                          : "bg-[#F0F0F0] text-[#9A9A9A]"
+                      }`}
+                    >
+                      {isOpen ? (
+                        <X className="h-3.5 w-3.5 lg:h-4 lg:w-4" strokeWidth={2.4} />
+                      ) : (
+                        <Plus className="h-3.5 w-3.5 lg:h-4 lg:w-4" strokeWidth={2.4} />
+                      )}
+                    </span>
+                  </button>
 
-                          text-[#CC000A]
-
-                          min-w-[34px]
-
-                          pt-[2px]
-                        "
-                      >
-                        {faq.id}
-                      </span>
-
-                      {/* Content */}
-                      <div className="flex-1 pr-4">
-                        <h3
-                          className="
-                            text-[17px]
-                            sm:text-[19px]
-
-                            leading-[30px]
-
-                            font-semibold
-
-                            text-black
-
-                            transition-all
-                            duration-300
-
-                            group-hover:text-[#CC000A]
-                          "
-                        >
-                          {faq.question}
-                        </h3>
-
-                        <AnimatePresence initial={false}>
-                          {isOpen && (
-                            <motion.div
-                              initial={{
-                                height: 0,
-                                opacity: 0,
-                              }}
-                              animate={{
-                                height:
-                                  "auto",
-                                opacity: 1,
-                              }}
-                              exit={{
-                                height: 0,
-                                opacity: 0,
-                              }}
-                              transition={{
-                                duration: 0.35,
-                              }}
-                              className="overflow-hidden"
-                            >
-                              <p
-                                className="
-                                  pt-4
-
-                                  text-[15px]
-                                  sm:text-[16px]
-
-                                  leading-[28px]
-
-                                  text-[#6B6B6B]
-
-                                  max-w-[900px]
-                                "
-                              >
-                                {
-                                  faq.answer
-                                }
-                              </p>
-                            </motion.div>
-                          )}
-                        </AnimatePresence>
-                      </div>
-
-                      {/* Icon */}
-                      <div
-                        className={`
-                          min-w-[30px]
-                          h-[30px]
-
-                          rounded-full
-
-                          flex
-                          items-center
-                          justify-center
-
-                          transition-all
-                          duration-300
-
-                          mt-1
-
-                          ${
-                            isOpen
-                              ? "bg-[#CC000A] text-white"
-                              : "bg-[#ECECEC] text-[#8D8D8D]"
-                          }
-                        `}
-                      >
-                        {isOpen ? (
-                          <X
-                            size={14}
-                            strokeWidth={
-                              2.5
-                            }
-                          />
-                        ) : (
-                          <Plus
-                            size={14}
-                            strokeWidth={
-                              2.5
-                            }
-                          />
-                        )}
-                      </div>
-                    </button>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
+                  {isOpen && (
+                    <p id={`${faqId}-answer-${index}`} role="region" aria-labelledby={`${faqId}-question-${index}`} className="max-w-[876px] font-manrope text-[14px] font-medium leading-5 text-[#5A5A5A] lg:mx-auto lg:w-[96%] lg:text-[16px] lg:leading-[26px] xl:text-[18px] xl:leading-[28px] 3xl:text-[20px] 3xl:leading-[30px]">
+                      {faq.answer}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

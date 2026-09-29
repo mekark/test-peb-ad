@@ -1,444 +1,132 @@
-"use client";
-
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 const galleryImages = [
+  "/Images/gal/1.webp",
+  "/Images/projects/DJI_20260221125016_0027_D.webp",
+  "/Images/projects/jaguar-showroom.webp",
+  "/Images/gal/4.webp",
+  "/Images/projects/mipl.webp",
+  "/Images/projects/sop.webp",
+];
+
+type GalleryTile = {
+  src: string;
+  alt: string;
+  className: string;
+  imageClassName?: string;
+};
+
+const galleryTiles: GalleryTile[] = [
   {
-    src: "/Images/gal/1.webp",
-    className: "lg:col-span-2 lg:row-span-2",
+    src: galleryImages[0],
+    alt: "Completed PEB structure project",
+    className:
+      "col-span-2 h-[220px] w-full sm:h-[320px] lg:col-span-2 lg:row-span-2 lg:h-[520px] 2xl:absolute 2xl:left-0 2xl:top-0 2xl:h-[643px] 2xl:w-[32.33%]",
+    imageClassName: "object-cover 2xl:object-[42%_center]",
   },
   {
-    src: "/Images/projects/DJI_20260221125016_0027_D.webp",
-    className: "",
+    src: galleryImages[1],
+    alt: "PEB construction project",
+    className:
+      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-0 2xl:h-[477px] 2xl:w-[24.1%]",
   },
   {
-    src: "/Images/projects/jaguar-showroom.webp",
-    className: "",
+    src: galleryImages[2],
+    alt: "Industrial building interior project",
+    className:
+      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[59.15%] 2xl:top-0 2xl:h-[477px] 2xl:w-[40.85%]",
   },
   {
-    src:"/Images/gal/4.webp",
-    className: "",
+    src: galleryImages[3],
+    alt: "Completed factory project",
+    className:
+      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-0 2xl:top-[663px] 2xl:h-[305px] 2xl:w-[32.33%]",
   },
   {
-    src:"/Images/projects/mipl.webp",
-    className: "",
+    src: galleryImages[4],
+    alt: "Steel structure construction project",
+    className:
+      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
   },
   {
-    src: "/Images/projects/sop.webp",
-    className: "",
-  },
-  {
-    src: "/Images/gal/7.webp",
-    className: "",
-  },
-  {
-    src:"/Images/gal/8.webp",
-    className: "lg:col-span-2 lg:row-span-2",
+    src: galleryImages[5],
+    alt: "Industrial project site",
+    className:
+      "col-span-2 h-[196px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[67.56%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
   },
 ];
 
+type ImageTileProps = {
+  src: string;
+  alt: string;
+  className: string;
+  imageClassName?: string;
+};
+
+function ImageTile({
+  src,
+  alt,
+  className,
+  imageClassName = "object-cover",
+}: ImageTileProps) {
+  return (
+    <div className={`relative overflow-hidden bg-[#D9D9D9] ${className}`}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 1024px) 50vw, 100vw"
+        className={imageClassName}
+      />
+    </div>
+  );
+}
+
 export default function ProjectsGallery() {
   return (
-    <section className="bg-[#F9F6F7] py-16 sm:py-20 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-[1440px] px-5 sm:px-8 lg:px-20">
-        {/* TOP SECTION */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="
-            flex
-            flex-col
-            gap-6
-
-            lg:flex-row
-            lg:items-end
-            lg:justify-between
-          "
-        >
-          {/* LEFT */}
-          <div>
-            <p
-              className="
-                font-space-grotesk
-                text-[12px]
-                font-bold
-                uppercase
-                leading-[16px]
-                tracking-[1.2px]
-                text-[#ED1D23]
-              "
-            >
+    <section
+      id="projects"
+      className="overflow-hidden bg-[#F9F6F7] py-8 lg:py-16 2xl:py-[70px]"
+    >
+      <div className="section-container-wide flex flex-col gap-6 lg:block lg:gap-0">
+        <div className="flex w-full max-w-[648px] flex-col items-start gap-4 lg:gap-[14px]">
+          <div className="flex w-full flex-col items-start gap-2.5 font-manrope font-bold lg:max-w-[509px] lg:gap-[13px]">
+            <p className="type-eyebrow font-bold text-[#ED1D23] tracking-[1.6px] lg:leading-[21px] 2xl:leading-6">
               Our Work
             </p>
 
-            <h2
-              className="
-                mt-3
-                font-manrope
-                text-[28px]
-                font-bold
-                leading-[34px]
-                text-black
-
-                sm:text-[38px]
-                sm:leading-[44px]
-
-                lg:text-[50px]
-                lg:leading-[55px]
-              "
-            >
-              Projects{" "}
-              <span className="text-[#ED1D23]">Gallery</span>
+            <h2 className="type-section-heading text-[#0F172A] 3xl:leading-[60px]">
+              Projects <span className="text-[#ED1D23]">Gallery</span>
             </h2>
           </div>
 
-          {/* RIGHT */}
-          <p
-            className="
-              max-w-[486px]
-              text-left
-              text-[16px]
-              font-medium
-              leading-[28px]
-              text-[#070506A6]
-
-              lg:text-right
-              lg:text-[18px]
-            "
-          >
-            Completed PEB structures across Tamil Nadu and beyond.
+          <p className="type-section-subtitle max-w-[307px] lg:max-w-none">
+            Completed PEB structures across India .
           </p>
-        </motion.div>
+        </div>
 
-{/* COLLAGE GRID */}
-<div
-  className="
-    mt-14
-    grid
-    grid-cols-1
-    gap-5
+        <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:mt-8 lg:grid-cols-6 lg:gap-5 2xl:relative 2xl:mt-10 2xl:h-[968px]">
+          {galleryTiles.map((tile) => (
+            <ImageTile
+              key={tile.src}
+              src={tile.src}
+              alt={tile.alt}
+              className={tile.className}
+              imageClassName={tile.imageClassName}
+            />
+          ))}
+        </div>
 
-    sm:grid-cols-2
-
-    lg:grid-cols-12
-    lg:grid-rows-[361px_361px_361px_361px]
-  "
->
-  {/* IMAGE 1 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.96 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ duration: 0.7 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[320px]
-
-      sm:h-[420px]
-
-      lg:col-span-8
-      lg:row-span-2
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[0].src}
-      alt="Project 1"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 2 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.1, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[1].src}
-      alt="Project 2"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 3 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.15, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[2].src}
-      alt="Project 3"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 4 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.2, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[3].src}
-      alt="Project 4"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 5 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.25, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[4].src}
-      alt="Project 5"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 6 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.3, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[5].src}
-      alt="Project 6"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 7 */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.35, duration: 0.6 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[260px]
-
-      sm:h-[320px]
-
-      lg:col-span-4
-      lg:row-span-1
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[6].src}
-      alt="Project 7"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-
-  {/* IMAGE 8 */}
-  <motion.div
-    initial={{ opacity: 0, scale: 0.96 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    transition={{ delay: 0.45, duration: 0.7 }}
-    viewport={{ once: true }}
-    whileHover={{ y: -6 }}
-    className="
-      group
-      relative
-      overflow-hidden
-      rounded-[20px]
-      border
-      border-[#E7E1E2]
-
-      h-[340px]
-
-      sm:h-[520px]
-
-      lg:col-span-8
-      lg:row-span-2
-      lg:h-full
-    "
-  >
-    <Image
-      src={galleryImages[7].src}
-      alt="Project 8"
-      fill
-      className="
-        object-cover
-        transition-transform
-        duration-700
-        group-hover:scale-105
-      "
-    />
-
-    <div className="absolute inset-0 bg-black/10" />
-  </motion.div>
-</div>
+        <div className="mt-6 flex justify-center lg:mt-[70px]">
+          <a
+            href="https://www.mekark.com/projects/completed-projects"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-w-[200px] items-center justify-center rounded-[8px] bg-[#C4161C] px-10 py-3.5 font-manrope text-[14px] font-semibold text-[#F5F5F5] shadow-[0_8.809px_17.618px_rgba(196,22,28,0.3)] transition-colors duration-300 hover:bg-[#A91217] sm:min-w-[220px] lg:min-w-[240px] lg:px-12 lg:py-4 lg:text-[16px] lg:font-extrabold xl:text-[17px] 2xl:text-[17px] 3xl:min-w-[280px] 3xl:px-14 3xl:py-5 3xl:text-[18px]"
+          >
+            View All →
+          </a>
+        </div>
       </div>
     </section>
   );

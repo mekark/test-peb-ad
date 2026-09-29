@@ -1,5 +1,3 @@
-"use client";
-
 import { ChevronDown } from "lucide-react";
 import { useEffect, useId, useRef, useState } from "react";
 
@@ -18,6 +16,7 @@ type IndustryTypeSelectProps = {
   onChange: (value: string) => void;
   options?: string[];
   placeholder?: string;
+  variant?: "default" | "figma";
 };
 
 export default function IndustryTypeSelect({
@@ -25,10 +24,12 @@ export default function IndustryTypeSelect({
   onChange,
   options = industryOptions,
   placeholder = "Select Industry Type*",
+  variant = "default",
 }: IndustryTypeSelectProps) {
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const listId = useId();
+  const isFigma = variant === "figma";
 
   useEffect(() => {
     if (!open) return;
@@ -62,7 +63,37 @@ export default function IndustryTypeSelect({
         aria-expanded={open}
         aria-controls={listId}
         onClick={() => setOpen((current) => !current)}
-        className="
+        className={
+          isFigma
+            ? `
+          flex
+          h-[46px]
+          2xl:h-[46px]
+          3xl:h-[54px]
+          w-full
+          items-center
+          justify-between
+          gap-3
+          rounded-[8px]
+          border
+          border-[#E2E2E2]
+          bg-[#F0F0F0]
+          px-4
+          text-left
+          text-[12px]
+          font-medium
+          text-black
+          outline-none
+          transition-all
+          duration-300
+          focus:border-[#C4161C]
+          focus:bg-white
+          lg:text-[12px]
+          xl:text-[13px]
+          2xl:text-[13px]
+          3xl:text-[14px]
+        `
+            : `
           flex
           w-full
           h-[54px]
@@ -83,7 +114,8 @@ export default function IndustryTypeSelect({
           duration-300
           focus:border-[#D90916]
           focus:bg-white
-        "
+        `
+        }
       >
         <span className="truncate">{value || placeholder}</span>
         <ChevronDown

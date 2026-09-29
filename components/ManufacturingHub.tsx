@@ -24,7 +24,7 @@ const factoryImages = [
 export default function ManufacturingHub() {
   return (
     <section className="bg-[#F5F5F5] py-16 sm:py-20 lg:py-28 overflow-hidden">
-      <div className="mx-auto max-w-[1450px] px-5 sm:px-8 lg:px-10">
+      <div className="section-container">
         <div
           className="
             grid
@@ -120,7 +120,7 @@ export default function ManufacturingHub() {
               >
                 <p
                   className="
-          font-space-grotesk
+          font-manrope
           text-[11px]
           uppercase
           tracking-[1.1px]
@@ -156,10 +156,8 @@ export default function ManufacturingHub() {
             {/* TOP LABEL */}
             <p
               className="
-                font-space-grotesk
-                text-[11px]
-                uppercase
-                tracking-[1.4px]
+                font-manrope
+                type-eyebrow
                 text-[#E50818]
               "
             >
@@ -178,12 +176,18 @@ export default function ManufacturingHub() {
                 tracking-[-1px]
                 text-black
 
-                sm:text-[38px]
-                sm:leading-[44px]
+                sm:text-[40px]
+                sm:leading-[46px]
 
-                lg:text-[52px]
-                lg:leading-[56px]
-                lg:tracking-[-1.02px]
+                lg:text-[40px]
+                lg:leading-[46px]
+
+                xl:text-[40px]
+                xl:leading-[46px]
+
+                2xl:text-[52px]
+                2xl:leading-[56px]
+                2xl:tracking-[-1.02px]
               "
             >
               Tamil Nadu’s High-Capacity{" "}
@@ -200,6 +204,9 @@ export default function ManufacturingHub() {
                 leading-[28px]
                 tracking-[-0.41px]
                 text-[#040303]
+                lg:text-[20px]
+                2xl:text-[26px]
+                2xl:leading-[34px]
               "
             >
               Inside Mekark's Manufacturing Excellence
@@ -209,8 +216,7 @@ export default function ManufacturingHub() {
             <div className="mt-5 space-y-5">
               <p
                 className="
-                  text-[16px]
-                  leading-[28px]
+                  type-body
                   text-[#322C2E]
                 "
               >
@@ -222,8 +228,7 @@ export default function ManufacturingHub() {
 
               <p
                 className="
-                  text-[16px]
-                  leading-[28px]
+                  type-body
                   text-[#322C2E]
                 "
               >
@@ -236,8 +241,7 @@ export default function ManufacturingHub() {
 
               <p
                 className="
-                  text-[16px]
-                  leading-[28px]
+                  type-body
                   text-[#322C2E]
                 "
               >
@@ -251,8 +255,7 @@ export default function ManufacturingHub() {
 
               <p
                 className="
-                  text-[16px]
-                  leading-[28px]
+                  type-body
                   text-[#322C2E]
                 "
               >
