@@ -15,7 +15,7 @@ export default function ProjectCTASection() {
   )}`;
 
   return (
-    <section className="relative overflow-hidden bg-[#090909] xl:min-h-[760px]">
+    <section className="defer-render relative overflow-hidden bg-[#090909] xl:min-h-[760px]">
       <Image
         src="/Images/footerbg-mobile.webp"
         alt=""

@@ -90,3 +90,8 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.defer-render {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
+}

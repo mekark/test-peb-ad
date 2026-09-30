@@ -87,7 +87,7 @@ export default function WhyChooseMekark() {
   return (
     <section
       id="whychooseus"
-      className="overflow-hidden bg-[#0A0A0A] py-5 text-white lg:bg-[#040303] lg:py-20"
+      className="defer-render overflow-hidden bg-[#0A0A0A] py-5 text-white lg:bg-[#040303] lg:py-20"
     >
       <div className="section-container-wide flex max-w-[1706px] flex-col gap-1.5 lg:max-w-[1920px] lg:gap-14 2xl:max-w-[1920px] 2xl:gap-20 3xl:max-w-[1920px] 3xl:px-[106.667px]">
         {/* Mobile — Figma editorial layout */}

@@ -102,7 +102,7 @@ export default function ProjectsGallery() {
   return (
     <section
       id="projects"
-      className="overflow-hidden bg-[#F9F6F7] py-8 lg:py-16 2xl:py-[70px]"
+      className="defer-render overflow-hidden bg-[#F9F6F7] py-8 lg:py-16 2xl:py-[70px]"
     >
       <div className="section-container-wide flex flex-col gap-6 lg:block lg:gap-0">
         <div className="flex w-full max-w-[648px] flex-col items-start gap-4 lg:gap-[14px]">

@@ -193,7 +193,7 @@ export default function ManufacturingProcess() {
 
       id="process"
 
-      className="overflow-hidden bg-[#F9F6F7] py-8 lg:py-20 2xl:py-24"
+      className="defer-render overflow-hidden bg-[#F9F6F7] py-8 lg:py-20 2xl:py-24"
 
     >
 
