@@ -35,8 +35,9 @@ export default function FloatingActions() {
 
   return (
     <div
-      className="fixed bottom-6 right-3 z-[100] flex flex-col items-center gap-2 sm:bottom-8 sm:right-6 sm:gap-3"
+      role="group"
       aria-label="Quick actions"
+      className="fixed bottom-6 right-3 z-[100] flex flex-col items-center gap-2 sm:bottom-8 sm:right-6 sm:gap-3"
     >
       {showScrollTop ? (
         <button
