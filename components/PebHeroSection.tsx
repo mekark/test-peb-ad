@@ -9,31 +9,22 @@ const PebHeroQuoteForm = dynamic(() => import("./PebHeroQuoteForm"), {
   loading: () => <HeroQuoteFormSkeleton />,
 });
 
-const clientLogos = [
-  { src: "/Images/Logos/vwu.webp", alt: "VWU" },
+const desktopClientLogos = [
+  { src: "/Images/Logos/saveetha.webp", alt: "Saveetha" },
   { src: "/Images/Logos/voltas.webp", alt: "Voltas" },
   { src: "/Images/Logos/tvs.webp", alt: "TVS" },
-  { src: "/Images/Logos/tata.webp", alt: "Tata" },
-  { src: "/Images/Logos/stetter.webp", alt: "Schwing Stetter" },
-  { src: "/Images/Logos/srf.webp", alt: "SRF" },
-  { src: "/Images/Logos/saveetha.webp", alt: "Saveetha" },
-  { src: "/Images/Logos/sarvam.webp", alt: "Sarvam" },
-  { src: "/Images/Logos/sanmar1.webp", alt: "Sanmar" },
-  { src: "/Images/Logos/sanmar.webp", alt: "Sanmar" },
-  { src: "/Images/Logos/reliance.webp", alt: "Reliance" },
-  { src: "/Images/Logos/orbittal.webp", alt: "Orbittal" },
-  { src: "/Images/Logos/ns.webp", alt: "NSI" },
-  { src: "/Images/Logos/mrf.webp", alt: "MRF" },
+  { src: "/Images/Logos/tata.webp", alt: "Tata Electronics" },
   { src: "/Images/Logos/lt.webp", alt: "L&T" },
-  { src: "/Images/Logos/laf.webp", alt: "Lafarge" },
-  { src: "/Images/Logos/kom.webp", alt: "Komatsu" },
+  { src: "/Images/Logos/mrf.webp", alt: "MRF" },
+  { src: "/Images/Logos/reliance.webp", alt: "Reliance" },
 ];
 
 const mobileClientLogos = [
-  { src: "/Images/figma-mobile/asset-15.png", alt: "Saveetha", size: 39 },
-  { src: "/Images/figma-mobile/asset-12.png", alt: "Voltas", size: 50 },
-  { src: "/Images/figma-mobile/asset-16.png", alt: "TVS", size: 53 },
-  { src: "/Images/figma-mobile/asset-07.png", alt: "Tata Electronics", size: 54 },
+  { src: "/Images/figma-mobile/asset-15.webp", alt: "Saveetha", size: 39 },
+  { src: "/Images/figma-mobile/asset-12.webp", alt: "Voltas", size: 50 },
+  { src: "/Images/figma-mobile/asset-16.webp", alt: "TVS", size: 53 },
+  { src: "/Images/figma-mobile/asset-07.webp", alt: "Tata Electronics", size: 54 },
+  { src: "/Images/Logos/lt.webp", alt: "L&T", size: 40 },
 ];
 
 const featureItems = [
@@ -62,31 +53,26 @@ const stats = [
   { end: 175, suffix: "+", label: "Engineering Team", suffixClassName: "text-[#C4161C]" },
 ];
 
-function ClientLogosCarousel() {
-  const marqueeLogos = [...clientLogos, ...clientLogos];
-
+function ClientLogosRow() {
   return (
-    <div className="relative flex h-[76px] w-full items-center overflow-hidden lg:h-[52px] xl:h-[52px] 2xl:h-[52px] 3xl:h-[75px]">
-      <div className="hero-logo-marquee-track flex w-max flex-nowrap items-center gap-4 lg:gap-6 xl:gap-8 2xl:gap-8 3xl:gap-[50px]">
-        {marqueeLogos.map((logo, index) => (
-          <div
-            key={`${logo.src}-${index}`}
-            className="flex h-[76px] w-[132px] shrink-0 items-center justify-center overflow-hidden rounded-[10px] bg-white px-2.5 py-2 lg:h-[52px] lg:w-[100px] lg:rounded-[8px] lg:p-1.5 xl:h-[52px] xl:w-[100px] 2xl:h-[52px] 2xl:w-[100px] 3xl:h-10 3xl:w-[90px] 3xl:rounded-[8px] 3xl:bg-[#F9F6F7] 3xl:p-1"
-          >
-            <Image
-              src={logo.src}
-              alt={index < clientLogos.length ? logo.alt : ""}
-              width={264}
-              height={152}
-              sizes="132px"
-              quality={75}
-              loading="lazy"
-              aria-hidden={index >= clientLogos.length}
-              className="h-full w-full object-contain"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="grid h-[52px] w-full grid-cols-7 items-center gap-2 xl:gap-3 3xl:h-10 3xl:gap-3">
+      {desktopClientLogos.map((logo) => (
+        <div
+          key={logo.src}
+          className="flex h-10 min-w-0 items-center justify-center overflow-hidden rounded-[8px] bg-[#F9F6F7] px-2"
+        >
+          <Image
+            src={logo.src}
+            alt={logo.alt}
+            width={120}
+            height={40}
+            sizes="120px"
+            quality={75}
+            loading="lazy"
+            className="h-7 w-auto max-w-full object-contain"
+          />
+        </div>
+      ))}
     </div>
   );
 }
@@ -271,39 +257,26 @@ export default function PebHeroSection() {
                 Trusted Across India
               </p>
 
-              <div className="overflow-hidden lg:hidden">
-                <div className="hero-logo-marquee-track flex w-max">
-                  {[0, 1].map((group) => (
-                    <div
-                      key={group}
-                      aria-hidden={group === 1 ? true : undefined}
-                      className="flex shrink-0 gap-[18px] pr-[18px]"
-                    >
-                      {Array.from({ length: 3 }, (_, repeat) =>
-                        mobileClientLogos.map((logo) => (
-                          <div
-                            key={`${repeat}-${logo.src}`}
-                            aria-hidden={repeat > 0 ? true : undefined}
-                            className="flex h-10 w-16 shrink-0 items-center justify-center overflow-hidden rounded-md bg-[#F9F6F7]"
-                          >
-                            <Image
-                              src={logo.src}
-                              alt={group === 0 && repeat === 0 ? logo.alt : ""}
-                              width={logo.size}
-                              height={logo.size}
-                              loading="lazy"
-                              className="shrink-0 object-contain"
-                            />
-                          </div>
-                        )),
-                      )}
-                    </div>
-                  ))}
-                </div>
+              <div className="grid grid-cols-5 gap-2 sm:gap-3 lg:hidden">
+                {mobileClientLogos.map((logo) => (
+                  <div
+                    key={logo.src}
+                    className="flex h-10 items-center justify-center overflow-hidden rounded-md bg-[#F9F6F7] px-1"
+                  >
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.size}
+                      height={logo.size}
+                      loading="lazy"
+                      className="h-7 w-auto max-w-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
 
-              <div className={`${styles.desktopLogos} hidden lg:block lg:-mx-5 3xl:absolute 3xl:left-[32px] 3xl:top-[55px] 3xl:mx-0 3xl:h-[75px] 3xl:w-[789px] 3xl:overflow-hidden`}>
-                <ClientLogosCarousel />
+              <div className={`${styles.desktopLogos} hidden w-full min-w-0 lg:block 3xl:absolute 3xl:left-[32px] 3xl:top-[55px] 3xl:h-auto 3xl:w-[783px]`}>
+                <ClientLogosRow />
               </div>
             </div>
 

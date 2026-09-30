@@ -87,21 +87,6 @@ body {
   animation: marquee 10s linear infinite;
 }
 
-.hero-logo-marquee-track {
-  will-change: transform;
-  animation: hero-logo-marquee 28s linear infinite;
-}
-
-@keyframes hero-logo-marquee {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }

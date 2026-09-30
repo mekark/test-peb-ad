@@ -22,10 +22,10 @@ const galleryTiles: GalleryTile[] = [
     src: galleryImages[0],
     alt: "Completed PEB structure project",
     className:
-      "col-span-2 h-[220px] w-full sm:h-[320px] lg:col-span-2 lg:row-span-2 lg:h-[520px] 2xl:absolute 2xl:left-0 2xl:top-0 2xl:h-[643px] 2xl:w-[32.33%]",
+      "h-[174px] w-full lg:col-span-2 lg:row-span-2 lg:h-[520px] 2xl:absolute 2xl:left-0 2xl:top-0 2xl:h-[643px] 2xl:w-[32.33%]",
     imageClassName: "object-cover 2xl:object-[42%_center]",
     sizes:
-      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 720px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 50vw, 720px",
   },
   {
     src: galleryImages[1],
@@ -47,7 +47,7 @@ const galleryTiles: GalleryTile[] = [
     src: galleryImages[3],
     alt: "Completed factory project",
     className:
-      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-0 2xl:top-[663px] 2xl:h-[305px] 2xl:w-[32.33%]",
+      "hidden h-[174px] w-full sm:h-[340px] lg:block lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-0 2xl:top-[663px] 2xl:h-[305px] 2xl:w-[32.33%]",
     sizes:
       "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 480px",
   },
@@ -55,7 +55,7 @@ const galleryTiles: GalleryTile[] = [
     src: galleryImages[4],
     alt: "Steel structure construction project",
     className:
-      "h-[174px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
+      "hidden h-[174px] w-full sm:h-[340px] lg:block lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[33.7%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
     sizes:
       "(max-width: 1023px) 50vw, (max-width: 1535px) 33vw, 480px",
   },
@@ -63,9 +63,9 @@ const galleryTiles: GalleryTile[] = [
     src: galleryImages[5],
     alt: "Industrial project site",
     className:
-      "col-span-2 h-[196px] w-full sm:h-[340px] lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[67.56%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
+      "h-[174px] w-full lg:col-span-2 lg:h-[250px] 2xl:absolute 2xl:left-[67.56%] 2xl:top-[497px] 2xl:h-[471px] 2xl:w-[32.44%]",
     sizes:
-      "(max-width: 1023px) 100vw, (max-width: 1535px) 50vw, 720px",
+      "(max-width: 1023px) 50vw, (max-width: 1535px) 50vw, 720px",
   },
 ];
 
